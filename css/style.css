@@ -1,3 +1,7 @@
+@font-face {
+  font-family: candara;
+  src: url(../candara/candara-font-family/Candara_Bold.ttf) format("truetype");
+}
 body {
   margin: 0;
   background-color: #BED4DD;
@@ -6,6 +10,11 @@ body {
 header > img {
   margin-top: 14px;
   margin-left: 37px;
+  width: 71px;
+}
+
+.accueil {
+  display: initial;
 }
 
 .a {
@@ -17,17 +26,21 @@ header > img {
   margin-right: 0;
 }
 .a > img {
-  width: 120px;
+  width: 122px;
 }
 
 .ecoute h1 {
+  text-align: center;
   font-size: 15px;
-  /* font-family: 0; */
+  font-family: candara;
+  font-weight: bold;
 }
 
 .ajout h1 {
+  text-align: center;
   font-size: 15px;
-  /* font-family: 0; */
+  font-family: candara;
+  font-weight: bold;
 }
 
 footer {
@@ -37,112 +50,14 @@ footer {
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 15px;
+  padding: 10px 20px;
   position: absolute;
   bottom: 0;
+  font-family: "Bellota Text", cursive;
+  font-weight: bold;
 }
 footer h3 {
   margin-top: 0px;
   margin-bottom: 0px;
-}
-
-body {
-  background-color: #BED4DD;
-}
-body h1 {
-  font-family: "Bellota Text";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 38px;
-  line-height: 48px;
-  text-align: center;
-  color: #FFFFFF;
-  margin: 0px;
-}
-body img {
-  width: 71px;
-  height: 39px;
-  margin-left: 37px;
-  margin-top: 14px;
-}
-
-main form {
-  text-align: center;
-}
-
-::-moz-placeholder {
-  color: rgb(0, 0, 0);
-  text-align: center;
-}
-
-::placeholder {
-  color: rgb(0, 0, 0);
-  text-align: center;
-}
-
-.connexion {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.connexion ::-moz-placeholder {
-  font-family: "Bellota Text";
-  font-size: 16px;
-  font-style: italic;
-  vertical-align: top;
-}
-.connexion ::placeholder {
-  font-family: "Bellota Text";
-  font-size: 16px;
-  font-style: italic;
-  vertical-align: top;
-}
-.connexion .identifiant {
-  margin-top: 183px;
-  width: 237px;
-  height: 42px;
-  border: none;
-}
-.connexion .mot {
-  margin: 24px 0 24px;
-  width: 237px;
-  height: 42px;
-  border: none;
-}
-.connexion .btn1 {
-  font-family: "Bellota Text";
-  font-size: 16px;
-  font-style: italic;
-  border: none;
-  background-color: #BED4DD;
-  margin-bottom: 120px;
-}
-.connexion .btn2 {
-  font-family: "Bellota Text";
-  font-size: 16px;
-  font-style: italic;
-  color: white;
-  background-color: black;
-  border: none;
-  width: 237px;
-  height: 42px;
-}
-
-.reset {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 135px;
-}
-.reset h2 {
-  font-family: "Bellota Text" sans-serif;
-  font-size: 20px;
-  color: white;
-}
-.reset .btn1 {
-  width: 140px;
-  height: 25px;
-  background-color: black;
-  color: white;
 }/*# sourceMappingURL=style.css.map */

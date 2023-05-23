@@ -7,8 +7,6 @@ fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=lat
   .then(truc => {
     for (let id = 0; id < 10; id++){
       document.querySelector(".divtest").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id].cover + "'>");
-      console.log(id);
-      console.log(truc[id].cover)
     }
   })
 
@@ -21,7 +19,16 @@ fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=lat
   .then(truc => {
     for (let id2 = 0; id2 < 8; id2++){
       document.querySelector(".divtest2").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id2].cover + "'>");
-      console.log(id2);
-      console.log(truc[id2].cover)
     }
   })
+
+let home = document.querySelector(".home");
+let chanteur = document.querySelector(".chanteur");
+let coeur = document.querySelector(".coeur");
+let perso = document.querySelector(".perso");
+let accueil = document.querySelector(".accueil");
+
+
+home.addEventListener("click", function(){
+  accueil.style.display = "initial"
+})
