@@ -1,6 +1,6 @@
-fetch("https://music.freefakeapi.io/api/tracks/1", {
+fetch("https://music.freefakeapi.io/api/tracks/2", {
   headers: { 
-    Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJlbWFpbCI6Im0udGFocmk1NTJAZ21haWwuY29tIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NDc0NjQwNiwiZXhwIjoxNjg0NzgyNDA2fQ.MjPT0cyoIovDVTRltTJNfyR3fOI-p3DvCXT5kvabb3k"
+    Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMSwiZW1haWwiOiJ5dXN0eW5pcmluYUBnbWFpbC5jb20iLCJyb2xlcyI6WyJST0xFX1VTRVIiXSwiaWF0IjoxNjg0ODI0MzQ4LCJleHAiOjE2ODQ4NjAzNDh9.MS2pRCIHwJiG6KtxL___ys0c-dXm0NMyYYqrYZG-Qg8"
   }
 })
   .then(reponse => reponse.json())
