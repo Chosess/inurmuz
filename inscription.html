@@ -7,24 +7,32 @@
     <link href="css/style.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:wght@400;700&family=DM+Sans&display=swap"
+        rel="stylesheet">
     <title>Document</title>
 </head>
 <body>
-    <header>
+    <header class="header inscription">
         <img src="/images/logo.svg" alt="logo">
         <h1>Inscription</h1>
     </header>
 
-    <main>
+    <main class="form">
         <form action="" method="get" class="form-example">
             <div class="form">
-                <input type="text" name="email" id="email" placeholder="e-mail" required>
-                <input type="text" name="email" id="email" placeholder="e-mail" required>
-                <input type="text" name="email" id="email" placeholder="e-mail" required>
-                <input type="text" name="email" id="email" placeholder="e-mail" required>
-                <input type="submit" value="S'inscrire">
+                <input type="text" class="placeholder" name="email" id="email" placeholder="e-mail" required>
+                <input type="text" class="placeholder" name="identifiant" id="identifiant" placeholder="Identifiant" required>
+                <input type="text" class="placeholder" name="motdepasse" id="motdepasse" placeholder="Mot de passe" required>
+                <input type="text" class="placeholder" name="confirmationmdp" id="confirmationmdp" placeholder="Confirmer le mot de passe" required>
+
+                <div>
+                    <input type="checkbox" id="horns" name="horns" required>
+                    <label for="horns">J’accepte les conditions d’utilisation</label>
+
+                </div>
+                <input id="submit" type="submit" value="S'inscrire">
             </div>
+            <a href="connexion.html">Déjà inscrit.e</a>
           </form>
         
     </main>
