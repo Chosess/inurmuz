@@ -1,3 +1,7 @@
+@font-face {
+  font-family: candara;
+  src: url(../candara/candara-font-family/Candara_Bold.ttf) format("truetype");
+}
 body {
   margin: 0;
   background-color: #BED4DD;
@@ -28,13 +32,15 @@ header > img {
 .ecoute h1 {
   text-align: center;
   font-size: 15px;
-  /* font-family: 0; */
+  font-family: candara;
+  font-weight: bold;
 }
 
 .ajout h1 {
   text-align: center;
   font-size: 15px;
-  /* font-family: 0; */
+  font-family: candara;
+  font-weight: bold;
 }
 
 footer {
@@ -48,6 +54,8 @@ footer {
   padding: 20px;
   position: absolute;
   bottom: 0;
+  font-family: "Bellota Text", cursive;
+  font-weight: bold;
 }
 footer h3 {
   margin-top: 0px;
