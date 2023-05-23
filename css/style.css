@@ -9,6 +9,10 @@ header > img {
   width: 71px;
 }
 
+.accueil {
+  display: initial;
+}
+
 .a {
   overflow-x: scroll;
   display: flex;
