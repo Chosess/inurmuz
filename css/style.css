@@ -1,3 +1,7 @@
+@font-face {
+  font-family: candara;
+  src: url(../candara/candara-font-family/Candara_Bold.ttf) format("truetype");
+}
 body {
   margin: 0;
   background-color: #BED4DD;
@@ -6,7 +10,11 @@ body {
 header > img {
   margin-top: 14px;
   margin-left: 37px;
-  width: 30%;
+  width: 71px;
+}
+
+.accueil {
+  display: initial;
 }
 
 .a {
@@ -18,17 +26,21 @@ header > img {
   margin-right: 0;
 }
 .a > img {
-  width: 120px;
+  width: 122px;
 }
 
 .ecoute h1 {
+  text-align: center;
   font-size: 15px;
-  /* font-family: 0; */
+  font-family: candara;
+  font-weight: bold;
 }
 
 .ajout h1 {
+  text-align: center;
   font-size: 15px;
-  /* font-family: 0; */
+  font-family: candara;
+  font-weight: bold;
 }
 
 footer {
@@ -38,20 +50,22 @@ footer {
   justify-content: center;
   align-items: center;
   text-align: center;
-  gap: 20px;
-  padding: 20px;
+  gap: 15px;
+  padding: 10px 20px;
   position: absolute;
   bottom: 0;
+  font-family: "Bellota Text", cursive;
+  font-weight: bold;
 }
 footer h3 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
 
-body {
+.inscription {
   background-color: #BED4DD;
 }
-body h1 {
+.inscription h1 {
   font-family: "Bellota Text";
   font-style: normal;
   font-weight: 400;
@@ -61,7 +75,7 @@ body h1 {
   color: #FFFFFF;
   margin: 0px;
 }
-body img {
+.inscription img {
   width: 71px;
   height: 39px;
   margin-left: 37px;
@@ -80,4 +94,43 @@ main form {
 ::placeholder {
   color: rgb(0, 0, 0);
   text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 26px;
+  font-style: italic;
+}
+.form .placeholder {
+  width: 237px;
+  height: 42px;
+  font-style: italic;
+  font-size: 16px;
+  font-family: "Bellota Text";
+  font-weight: 400;
+}
+.form #email {
+  margin-top: 26px;
+}
+.form #submit {
+  width: 237px;
+  height: 42px;
+  background-color: black;
+  color: white;
+  font-style: italic;
+  font-size: 16px;
+  font-family: "Bellota Text";
+  margin-bottom: 20px;
+}
+.form a {
+  font-family: "Bellota Text";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
 }/*# sourceMappingURL=style.css.map */
