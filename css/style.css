@@ -1,3 +1,35 @@
+body {
+  margin: 0;
+  background-color: #BED4DD;
+}
+
+header > img {
+  margin-top: 14px;
+  margin-left: 37px;
+}
+
+.a {
+  overflow-x: scroll;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: 23px;
+  margin-right: 0;
+}
+.a > img {
+  width: 120px;
+}
+
+.ecoute h1 {
+  font-size: 15px;
+  /* font-family: 0; */
+}
+
+.ajout h1 {
+  font-size: 15px;
+  /* font-family: 0; */
+}
+
 footer {
   background-color: black;
   color: white;
@@ -7,6 +39,8 @@ footer {
   text-align: center;
   gap: 20px;
   padding: 20px;
+  position: absolute;
+  bottom: 0;
 }
 footer h3 {
   margin-top: 0px;
