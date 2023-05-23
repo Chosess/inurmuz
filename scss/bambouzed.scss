@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    background-color: #BED4DD;
+}
+
+header {
+    &>img {
+        margin-top: 14px;
+        margin-left: 37px;
+        width: 30%;
+    }
+}
+
+.a {
+    overflow-x: scroll;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: 23px;
+    margin-right: 0;
+
+    &>img {
+        width: 120px;
+    }
+}
+
+.ecoute {
+    h1 {
+        font-size: 15px;
+        /* font-family: 0; */
+    }
+}
+
+.ajout {
+    h1 {
+        font-size: 15px;
+        /* font-family: 0; */
+    }
+}
+
+footer {
+    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+
+    h3 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+
+    }
+}
+
+// body{
+// background-color: #BED4DD ;
+// h1{
+//     font-family: 'Bellota Text';
+//     font-style: normal;
+//     font-weight: 400;
+//     font-size: 38px;
+//     line-height: 48px;
+//     text-align: center;
+//     color: #FFFFFF;
+//     margin: 0px;
+// }
+//     img{
+//     width: 71px;
+//     height: 39px;
+//     margin-left: 37px;
+//     margin-top: 14px;
+//     }
+
+// }
+
+
+main {
+    form {
+        text-align: center;
+    }
+}
+
+
+::placeholder {
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.bambouzed {
+    color: antiquewhite;
+    text-align: center;
+    font-family: 'Bellota Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 40px;
+    text-align: center;
+    margin: 0px;
+    margin-bottom: 30px;
+
+}
+
+.artist-container {
+    height: 264px;
+    overflow-y: scroll;
+
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.artist-scroll {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.artist-box {
+    width: 90%;
+    border: solid black 1px;
+    background-color: transparent;
+    margin-bottom: 20px;
+    height: 54px;
+
+
+}
+
+section {
+    .artist-container {
+        .artist-name {
+            font-weight: bold;
+            font-family: 'Bellota Text';
+            font-style: normal;
+            font-weight: 400;
+
+            color: #000000;
+            background-color: red;            
+        }
+    }
+
+}
+
+
+// .artist-box {
+//     img {
+//         margin-top: 6px;
+//         // margin-bottom: 7px;
+//         margin-left: 16px;
+//         // margin-right: 215px;
+//     }
+// }
