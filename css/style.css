@@ -6,6 +6,7 @@ body {
 header > img {
   margin-top: 14px;
   margin-left: 37px;
+  width: 71px;
 }
 
 .a {
@@ -21,11 +22,13 @@ header > img {
 }
 
 .ecoute h1 {
+  text-align: center;
   font-size: 15px;
   /* font-family: 0; */
 }
 
 .ajout h1 {
+  text-align: center;
   font-size: 15px;
   /* font-family: 0; */
 }
@@ -45,38 +48,4 @@ footer {
 footer h3 {
   margin-top: 0px;
   margin-bottom: 0px;
-}
-
-body {
-  background-color: #BED4DD;
-}
-body h1 {
-  font-family: "Bellota Text";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 38px;
-  line-height: 48px;
-  text-align: center;
-  color: #FFFFFF;
-  margin: 0px;
-}
-body img {
-  width: 71px;
-  height: 39px;
-  margin-left: 37px;
-  margin-top: 14px;
-}
-
-main form {
-  text-align: center;
-}
-
-::-moz-placeholder {
-  color: rgb(0, 0, 0);
-  text-align: center;
-}
-
-::placeholder {
-  color: rgb(0, 0, 0);
-  text-align: center;
 }/*# sourceMappingURL=style.css.map */
