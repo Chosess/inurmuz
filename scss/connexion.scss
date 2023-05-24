@@ -1,86 +1,106 @@
 body {
-    margin: 0;
-    background-color: #BED4DD;
+  margin: 0;
+  background-color: #BED4DD;
 }
 
 header {
-    &>img {
-        margin-top: 14px;
-        margin-left: 37px;
-        width: 71px;
-    }
+  &>img {
+    margin-top: 14px;
+    margin-left: 37px;
+    width: 71px;
+  }
 }
-.connexion {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    & ::-moz-placeholder {
-      font-family: "Bellota Text";
-      color: black;
-      font-size: 16px;
-      font-style: italic;
-      text-align: center;
-    }
-    
-    & ::placeholder {
-      font-family: "Bellota Text";
-      font-size: 16px;
-      font-style: italic;
-    }
-    
-    .identifiant {
-      margin-top: 183px;
-      width: 237px;
-      height: 42px;
-      border: none;
-    }
-    
-    .mot {
-      margin: 24px 0 24px;
-      width: 237px;
-      height: 42px;
-      border: none;
-    }
-    
-    .btn1 {
-      font-family: "Bellota Text";
-      font-size: 16px;
-      font-style: italic;
-      border: none;
-      background-color: #BED4DD;
-      margin-bottom: 120px;
-    }
-    
-    .btn2 {
-      font-family: "Bellota Text";
-      font-size: 16px;
-      font-style: italic;
-      color: white;
-      background-color: black;
-      border: none;
-      width: 237px;
-      height: 42px;
-    }
-  }
-  .reset {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 135px;
-    
-    h2 {
-      font-family: "Bellota Text" sans-serif;
-      font-size: 20px;
-      color: white;
 
-    }
-    
-    .btn1 {
-      width: 140px;
-      height: 25px;
-      background-color: black;
-      color: white;
-    }
+.connexion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ::placeholder {
+    font-family: "Bellota Text";
+    color: black;
+    font-size: 16px;
+    font-style: italic;
+    text-align: center;
   }
-  
+
+
+  h1 {
+    font-family: 'Bellota Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 48px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0px;
+  }
+
+  // & ::-moz-placeholder {
+  //   
+  // }
+
+  // & ::placeholder {
+  //   font-family: "Bellota Text";
+  //   font-size: 16px;
+  //   font-style: italic;
+  // }
+
+
+  .identifiant {
+    margin-top: 183px;
+    width: 237px;
+    height: 42px;
+    border: none;
+  }
+
+  .mot {
+    margin: 24px 0 24px;
+    width: 237px;
+    height: 42px;
+    border: none;
+  }
+
+  .btn1 {
+    color: black;
+    font-family: "Bellota Text";
+    font-size: 16px;
+    font-style: italic;
+    border: none;
+    background-color: #BED4DD;
+    margin-bottom: 120px;
+  }
+
+  .btn2 {
+    font-family: "Bellota Text";
+    font-size: 16px;
+    font-style: italic;
+    color: white;
+    background-color: black;
+    border: none;
+    width: 237px;
+    height: 42px;
+  }
+}
+
+.reset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 135px;
+
+  h2 {
+    font-family: "Bellota Text" sans-serif;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+
+  }
+
+  .btn1 {
+    width: 140px;
+    height: 25px;
+    background-color: black;
+    color: white;
+  }
+}
