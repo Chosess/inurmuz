@@ -1,0 +1,177 @@
+body {
+    margin: 0;
+    background-color: #BED4DD;
+}
+
+.lecteurmini {
+    width: 256px;
+    background-image: url(../images/lecteurmini.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 10px;
+    font-size: 14px;
+    position: fixed;
+    bottom: 75px;
+    display: none; 
+
+    &>div:first-child {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        height: 35px;
+        width: 200px;
+
+        &>div {
+            text-align: center;
+
+            &>* {
+                margin: 10px 0;
+            }
+        }
+
+        &>img {
+            margin-top: 20px;
+            height: 38px;
+        }
+
+        &>p {
+            position: relative;
+        }
+
+        &>p::before {
+            content: "";
+            position: absolute;
+            height: 20px;
+            width: 20px;
+            top: -20px;
+            left: 10px;
+            background-image: url(../images/flechehaut.svg);
+            background-repeat: no-repeat;
+        }
+    }
+
+    &>div:last-child {
+        margin-top: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    &>img {
+        position: absolute;
+        top: 45px;
+        right: 20px;
+    }
+}
+
+
+.lecteur {
+    font-family: 'DM Sans', sans-serif;
+    &>img {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 30px;
+        margin-bottom: 20px;
+    }
+
+    a{
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        font-family: 'Bellota Text', cursive;
+        font-size: 13px;
+        font-weight: 700;
+        color: black;
+    }
+
+    &>div {
+        &>div:first-child>img {
+            height: 200px;
+            width: 200px;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 2px solid #FFFFFF;
+            filter: drop-shadow(5px 4px 4px #000000);
+        }
+
+        &>div:nth-child(2) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+
+            &>div {
+                text-align: center;
+                font-family: 'Bellota Text', cursive;
+                h2{
+                    margin-bottom: 10px;
+                }
+            }
+
+            .coeurvide{
+                width: 31px;
+                height: 28px;
+                background-image: url(../images/coeurvide.svg);
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+
+            .coeurplein{
+                width: 31px;
+                height: 28px;
+                background-image: url(../images/coeurplein.svg);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                display: none;
+            }
+
+
+        }
+
+        &>div:nth-child(3) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+
+            &>img {
+                height: 40px;
+            }
+
+            &>div{
+                width: 33px;
+                height: 40px;
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+
+            .pause_lecture{
+                background-image: url(../images/pauselecteur.svg);
+            }
+
+            .lecture_pause{
+                background-image: url(../images/pause.svg);
+                display: none;
+            }
+        }
+
+        &>div:nth-child(4) {
+            display: flex;
+            justify-content: center;
+            align-items: first baseline;
+            color: white;
+            margin-top: 20px;
+
+            input {
+                margin: 0;
+            }
+
+            p {
+                margin: 0;
+                text-align: center;
+            }
+        }
+    }
+}
