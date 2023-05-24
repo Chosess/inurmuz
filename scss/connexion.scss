@@ -104,3 +104,43 @@ header {
     color: white;
   }
 }
+.licences{
+.liens{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  h1{
+    font-family: "Bellota Text", sans-serif;
+    font-size: 36px;
+    text-decoration: underline;
+  }
+  a{
+    font-family: "Bellota Text", sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: black;
+    margin: 25px;
+  }
+}
+
+footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  padding: 10px 20px;
+  position: absolute;
+  bottom: 0;
+  font-family: 'Bellota Text', cursive;
+  font-weight: bold;
+
+  h3 {
+      margin-top: 0px;
+      margin-bottom: 0px;
+
+  }
+}
+}
