@@ -404,3 +404,8 @@ function buildDuration(duration) {
 }
 
 
+
+pausemini.addEventListener("click", function(){
+  pausemini.style.display = "none";
+  lecturemini.style.display = "initial";
+})
