@@ -44,3 +44,18 @@ lecpause.addEventListener("click", function(){
     lecpause.style.display = "none";
     pauselec.style.display = "initial";
 })
+
+//lecture mini -> pause mini
+
+let lecturemini = document.querySelector(".lecturemini");
+let pausemini = document.querySelector(".pausemini");
+
+lecturemini.addEventListener("click", function(){
+  lecturemini.style.display = "none";
+  pausemini.style.display = "initial";
+})
+
+pausemini.addEventListener("click", function(){
+  pausemini.style.display = "none";
+  lecturemini.style.display = "initial";
+})
