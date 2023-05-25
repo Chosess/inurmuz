@@ -148,6 +148,7 @@ main form {
   font-size: 14px;
   position: fixed;
   bottom: 57px;
+  display: none;
 }
 .lecteurmini > div:first-child {
   display: flex;
@@ -243,6 +244,8 @@ main form {
 }
 .lecteur > div > div:nth-child(2) > div h2 {
   margin-bottom: 10px;
+  max-width: 100px;
+  font-size: 24px;
 }
 .lecteur > div > div:nth-child(2) .coeurvide {
   width: 31px;
