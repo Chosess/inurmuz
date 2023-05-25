@@ -56,8 +56,9 @@ footer {
   text-align: center;
   gap: 15px;
   padding: 10px 20px;
-  position: absolute;
+  position: fixed;
   bottom: 0;
+  width: 100%;
   font-family: "Bellota Text", cursive;
   font-weight: bold;
 }
@@ -78,6 +79,7 @@ footer h3 {
   text-align: center;
   color: #FFFFFF;
   margin: 0px;
+  margin-top: 70px;
 }
 .inscription img {
   width: 71px;
@@ -116,6 +118,7 @@ main form {
   font-size: 16px;
   font-family: "Bellota Text";
   font-weight: 400;
+  border-style: none;
 }
 .form #email {
   margin-top: 26px;
@@ -129,6 +132,8 @@ main form {
   font-size: 16px;
   font-family: "Bellota Text";
   margin-bottom: 20px;
+  border-style: none;
+  margin-top: 30px;
 }
 .form a {
   font-family: "Bellota Text";

@@ -42,6 +42,7 @@ footer {
   padding: 20px;
   position: absolute;
   bottom: 0;
+  width: 100%;
 }
 footer h3 {
   margin-top: 0px;
@@ -100,6 +101,4 @@ section .artist-container .artist-name {
   font-family: "Bellota Text";
   font-style: normal;
   font-weight: 400;
-  color: #000000;
-  background-color: red;
 }/*# sourceMappingURL=bambouzed.css.map */

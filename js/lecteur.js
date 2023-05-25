@@ -20,14 +20,17 @@ let flechehaut = document.querySelector(".flechehaut");
 
 flechebas.addEventListener("click", function(){
     lecteurmini.style.display = "block";
-    lecteur.style.display = "none"
+    lecteur.style.display = "none";
+    favoris.style.display = "block";
+
 })
 
 //agrandir le lecteur
 
 flechehaut.addEventListener("click", function(){
     lecteurmini.style.display = "none";
-    lecteur.style.display = "block"
+    lecteur.style.display = "block";
+    favoris.style.display = "none";
 })
 
 // lecture -> pause
@@ -59,3 +62,5 @@ pausemini.addEventListener("click", function(){
   pausemini.style.display = "none";
   lecturemini.style.display = "initial";
 })
+
+let favoris = document.querySelector(".favoris");

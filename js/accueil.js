@@ -196,10 +196,10 @@ fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=pla
           coeurplein.style.display = "initial"
         })
 
-        coeurplein.addEventListener("click", function () {
-          coeurplein.style.display = "none";
-          coeurvide.style.display = "initial"
-        })
+coeurplein.addEventListener("click", function(){
+    coeurplein.style.display = "none";
+    coeurvide.style.display = "initial"
+})
 
 
 
