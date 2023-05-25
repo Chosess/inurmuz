@@ -23,8 +23,20 @@ header > img {
 }
 .connexion ::placeholder {
   font-family: "Bellota Text";
+  color: black;
   font-size: 16px;
   font-style: italic;
+  text-align: center;
+}
+.connexion h1 {
+  font-family: "Bellota Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 48px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0px;
 }
 .connexion .identifiant {
   margin-top: 183px;
@@ -39,6 +51,7 @@ header > img {
   border: none;
 }
 .connexion .btn1 {
+  color: black;
   font-family: "Bellota Text";
   font-size: 16px;
   font-style: italic;
@@ -67,10 +80,47 @@ header > img {
   font-family: "Bellota Text" sans-serif;
   font-size: 20px;
   color: white;
+  text-align: center;
 }
 .reset .btn1 {
   width: 140px;
   height: 25px;
   background-color: black;
   color: white;
+}
+
+.licences .liens {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.licences .liens h1 {
+  font-family: "Bellota Text", sans-serif;
+  font-size: 36px;
+  text-decoration: underline;
+}
+.licences .liens a {
+  font-family: "Bellota Text", sans-serif;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  margin: 25px;
+}
+.licences footer {
+  background-color: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 15px;
+  padding: 10px 20px;
+  position: absolute;
+  bottom: 0;
+  font-family: "Bellota Text", cursive;
+  font-weight: bold;
+}
+.licences footer h3 {
+  margin-top: 0px;
+  margin-bottom: 0px;
 }/*# sourceMappingURL=connexion.css.map */
