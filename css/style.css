@@ -8,9 +8,10 @@ body {
 }
 
 header > img {
-  margin-top: 14px;
-  margin-left: 37px;
   width: 71px;
+  position: absolute;
+  top: 14px;
+  left: 37px;
 }
 
 .accueil {
@@ -29,6 +30,9 @@ header > img {
   width: 122px;
 }
 
+.ecoute {
+  margin-top: 67px;
+}
 .ecoute h1 {
   text-align: center;
   font-size: 15px;
@@ -133,4 +137,161 @@ main form {
   font-size: 14px;
   text-decoration: none;
   color: black;
+}
+
+.lecteurmini {
+  width: 256px;
+  background-image: url(../images/lecteurmini.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 10px;
+  font-size: 14px;
+  position: fixed;
+  bottom: 57px;
+}
+.lecteurmini > div:first-child {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  height: 35px;
+  width: 200px;
+}
+.lecteurmini > div:first-child > div {
+  text-align: center;
+}
+.lecteurmini > div:first-child > div > * {
+  margin: 10px 0;
+}
+.lecteurmini > div:first-child > img {
+  margin-top: 20px;
+  height: 38px;
+}
+.lecteurmini > div:first-child > p {
+  position: relative;
+}
+.lecteurmini > div:first-child > p::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  top: -20px;
+  left: 10px;
+  background-image: url(../images/flechehaut.svg);
+  background-repeat: no-repeat;
+}
+.lecteurmini > div:last-child {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.lecteurmini > .lec {
+  position: absolute;
+  top: 45px;
+  right: 20px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 24px;
+  height: 24px;
+}
+.lecteurmini > .lecturemini {
+  background-image: url(../images/lecture.svg);
+}
+.lecteurmini > .pausemini {
+  background-image: url(../images/pause.svg);
+  display: none;
+}
+
+.lecteur {
+  font-family: "DM Sans", sans-serif;
+  display: none;
+}
+.lecteur > img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.lecteur a {
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  font-family: "Bellota Text", cursive;
+  font-size: 13px;
+  font-weight: 700;
+  color: black;
+}
+.lecteur > div > div:first-child > img {
+  height: 180px;
+  width: 180px;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 2px solid #FFFFFF;
+  filter: drop-shadow(5px 4px 4px #000000);
+}
+.lecteur > div > div:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+.lecteur > div > div:nth-child(2) > div {
+  text-align: center;
+  font-family: "Bellota Text", cursive;
+}
+.lecteur > div > div:nth-child(2) > div h2 {
+  margin-bottom: 10px;
+}
+.lecteur > div > div:nth-child(2) .coeurvide {
+  width: 31px;
+  height: 28px;
+  background-image: url(../images/coeurvide.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.lecteur > div > div:nth-child(2) .coeurplein {
+  width: 31px;
+  height: 28px;
+  background-image: url(../images/coeurplein.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  display: none;
+}
+.lecteur > div > div:nth-child(3) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+}
+.lecteur > div > div:nth-child(3) > img {
+  height: 40px;
+}
+.lecteur > div > div:nth-child(3) > div {
+  width: 33px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.lecteur > div > div:nth-child(3) .pause_lecture {
+  background-image: url(../images/pauselecteur.svg);
+}
+.lecteur > div > div:nth-child(3) .lecture_pause {
+  background-image: url(../images/pause.svg);
+  display: none;
+}
+.lecteur > div > div:nth-child(4) {
+  display: flex;
+  justify-content: center;
+  align-items: first baseline;
+  color: white;
+  margin-top: 20px;
+}
+.lecteur > div > div:nth-child(4) input {
+  margin: 0;
+}
+.lecteur > div > div:nth-child(4) p {
+  margin: 0;
+  text-align: center;
 }/*# sourceMappingURL=style.css.map */
