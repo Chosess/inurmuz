@@ -1,173 +1,7 @@
-@font-face {
-    font-family: candara;
-    src: url(../candara/candara-font-family/Candara_Bold.ttf) format("truetype");
-}
-
 body {
     margin: 0;
     background-color: #BED4DD;
-    
 }
-
-header {
-    &>img {
-        // margin-top: 14px;
-        // margin-left: 37px;
-        width: 71px;
-        position: absolute;
-        top: 14px;
-        left: 37px;
-    }
-}
-
-.accueil{
-    display: initial;
-}
-
-.a{
-    overflow-x: scroll;
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    margin-left: 23px;
-    margin-right: 0;
-    &>img{
-        width: 122px;
-    }
-}
-
-.ecoute{
-    margin-top: 67px;
-    h1{
-        text-align: center;
-        font-size: 15px;
-        font-family: candara;
-        font-weight: bold;
-    }
-}
-
-.ajout{
-    h1{
-        text-align: center;
-        font-size: 15px;
-        font-family: candara; 
-        font-weight: bold;
-    }
-}
-
-footer {
-    background-color: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 15px;
-    padding: 10px 20px;
-    position: fixed;
-    bottom: 0;
-    width:100%;
-    font-family: 'Bellota Text', cursive;
-    font-weight: bold;
-    
-
-    h3 {
-        margin-top: 0px;
-        margin-bottom: 0px;
-
-    }
-}
-
-
-.inscription{
-background-color: #BED4DD ;
-h1{
-    font-family: 'Bellota Text';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 38px;
-    line-height: 48px;
-    text-align: center;
-    color: #FFFFFF;
-    margin: 0px;
-}
-    img{
-    width: 71px;
-    height: 39px;
-    margin-left: 37px;
-    margin-top: 14px;
-    }
-
-}
-
-
-main{
-
-    form{
-        text-align: center;
-        
-    }
-}
-
-
-// ::placeholder{
-//     color: rgb(0, 0, 0);
-//     text-align: center;
-// }
-
- 
-::placeholder{
-    color: rgb(0, 0, 0);
-    text-align: center;
-}
-
-.form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    gap: 26px;
-    font-style: italic;
-    
-   .placeholder{
-    width: 237px;
-    height: 42px;
-    font-style: italic;
-    font-size: 16px;
-    font-family: 'Bellota Text';
-    font-weight: 400;
-    border-style: none;
-   }
-#email{
-    margin-top: 26px;
-}
-   #submit{
-    width: 237px;
-    height: 42px;
-    background-color: black;
-    color: white;
-    font-style: italic;
-    font-size: 16px;
-    font-family: 'Bellota Text';
-    margin-bottom: 20px;
-    border-style: none;
-    margin-top: 30px;
-   }
-   a{
-    font-family: 'Bellota Text';
-    font-style: italic;
-    font-weight: 400;
-    font-size: 14px;
-    text-decoration: none;
-    color: black;
-    
-   }
-}
-
-
-// scss pour le lecteur
-
 
 .lecteurmini {
     width: 256px;
@@ -177,8 +11,8 @@ main{
     padding: 10px;
     font-size: 14px;
     position: fixed;
-    bottom: 57px;
-    // display: none;
+    bottom: 75px;
+    display: none; 
 
     &>div:first-child {
         display: flex;
@@ -223,30 +57,16 @@ main{
         gap: 10px;
     }
 
-    &>.lec {
+    &>img {
         position: absolute;
         top: 45px;
         right: 20px;
-        background-repeat: no-repeat;
-        background-size: contain;
-        width: 24px;
-        height: 24px;
-    }
-
-    &>.lecturemini{
-        background-image: url(../images/lecture.svg);
-    }
-
-    &>.pausemini{
-        background-image: url(../images/pause.svg);
-        display: none;
     }
 }
 
 
 .lecteur {
     font-family: 'DM Sans', sans-serif;
-    display: none;
     &>img {
         position: relative;
         left: 50%;
@@ -267,8 +87,8 @@ main{
 
     &>div {
         &>div:first-child>img {
-            height: 180px;
-            width: 180px;
+            height: 200px;
+            width: 200px;
             position: relative;
             left: 50%;
             transform: translateX(-50%);
