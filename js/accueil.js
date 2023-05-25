@@ -49,6 +49,7 @@ coeurvide.addEventListener("click", function(){
 coeurplein.addEventListener("click", function(){
     coeurplein.style.display = "none";
     coeurvide.style.display = "initial"
+
 })
 
 let flechebas = document.querySelector(".flechebas");
