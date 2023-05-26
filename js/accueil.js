@@ -81,7 +81,7 @@ document.querySelector("#submit").addEventListener("click", function () {
 
 
 
-document.querySelector(".btn2").addEventListener("click", function(){
+document.querySelector(".btn2").addEventListener("click", function () {
   fetch("https://music.freefakeapi.io/api/login", {
     method: "post",
 
@@ -97,7 +97,7 @@ document.querySelector(".btn2").addEventListener("click", function(){
       if (token.code == "403") {
 
         document.querySelector(".wrong2").innerHTML = "Email ou Mot de passe incorrect";
-        
+
       } else {
         document.querySelector(".formulaire_de_connexion").style.display = "none";
         document.querySelector(".accueil").style.display = "block";
@@ -131,291 +131,293 @@ document.querySelector(".btn2").addEventListener("click", function(){
 //   .then(reponse => reponse.json())
 //   .then(token => sessionStorage.token = token.token)
 
-fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=latest&limit=10", {
-  headers: {
-    Authorization: "Bearer " + sessionStorage.token
-  }
-})
-  .then(reponse => reponse.json())
-  .then(truc => {
-    for (let id = 0; id < 10; id++) {
-      document.querySelector(".divtest").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id].cover + "' id = '" + id + "'>");console.log(id)
-    } 
+if (sessionStorage.token) {
 
-    let lamusique = document.querySelector(".la_musique_trop_genial");
-    let coeurvide = document.querySelector(".coeurvide");
-    let coeurplein = document.querySelector(".coeurplein");
-    let flechebas = document.querySelector(".flechebas");
-    let lecteur = document.querySelector(".lecteur");
-    let lecteurmini = document.querySelector(".lecteurmini");
-    let flechehaut = document.querySelector(".flechehaut");
-    let pauselec = document.querySelector(".pause_lecture");
-    let lecpause = document.querySelector(".lecture_pause");
-    let lecturemini = document.querySelector(".lecturemini");
-    let pausemini = document.querySelector(".pausemini");
-    let audio = document.querySelector("audio");
+  fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=latest&limit=10", {
+    headers: {
+      Authorization: "Bearer " + sessionStorage.token
+    }
+  })
+    .then(reponse => reponse.json())
+    .then(truc => {
+      for (let id = 0; id < 10; id++) {
+        document.querySelector(".divtest").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id].cover + "' id = '" + id + "'>");
+      }
 
-    document.querySelectorAll(".divtest img").forEach(image => {
-      image.addEventListener("click", function () {
+      let lamusique = document.querySelector(".la_musique_trop_genial");
+      let coeurvide = document.querySelector(".coeurvide");
+      let coeurplein = document.querySelector(".coeurplein");
+      let flechebas = document.querySelector(".flechebas");
+      let lecteur = document.querySelector(".lecteur");
+      let lecteurmini = document.querySelector(".lecteurmini");
+      let flechehaut = document.querySelector(".flechehaut");
+      let pauselec = document.querySelector(".pause_lecture");
+      let lecpause = document.querySelector(".lecture_pause");
+      let lecturemini = document.querySelector(".lecturemini");
+      let pausemini = document.querySelector(".pausemini");
+      let audio = document.querySelector("audio");
 
-        lamusique.src = "https://music.freefakeapi.io" + truc[image.id].file;
+      document.querySelectorAll(".divtest img").forEach(image => {
+        image.addEventListener("click", function () {
 
-        //la durée d'une musique
-        document.querySelector(".tracktime").textContent = truc[image.id].duration.slice(15);
+          lamusique.src = "https://music.freefakeapi.io" + truc[image.id].file;
 
-        //titre_de_la_chanson
-        document.querySelector(".titre_de_la_chanson").textContent = truc[image.id].title.slice(0, 5) + "...";
+          //la durée d'une musique
+          document.querySelector(".tracktime").textContent = truc[image.id].duration.slice(15);
 
-        //cover_de_la_chanson
-        document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + truc[image.id].cover;
+          //titre_de_la_chanson
+          document.querySelector(".titre_de_la_chanson").textContent = truc[image.id].title.slice(0, 5) + "...";
 
-        //le lecteur
-        lecteurmini.style.display = "none";
-        lecteur.style.display = "block";
-        accueil.style.display = "none";
+          //cover_de_la_chanson
+          document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + truc[image.id].cover;
 
-        document.querySelector(".cover").src = "https://music.freefakeapi.io" + truc[image.id].cover;
-        document.querySelector(".title").textContent = truc[image.id].title;
-
-        //js pour le lecteur
-
-        coeurvide.addEventListener("click", function () {
-          coeurvide.style.display = "none";
-          coeurplein.style.display = "initial"
-        })
-
-        coeurplein.addEventListener("click", function () {
-          coeurplein.style.display = "none";
-          coeurvide.style.display = "initial"
-        })
-
-        //réduire le lecteur
-
-        flechebas.addEventListener("click", function () {
-          lecteurmini.style.display = "block";
-          lecteur.style.display = "none";
-          accueil.style.display = "block"
-        })
-
-        //agrandir le lecteur
-
-        flechehaut.addEventListener("click", function () {
+          //le lecteur
           lecteurmini.style.display = "none";
           lecteur.style.display = "block";
-          accueil.style.display = "none"
-        })
+          accueil.style.display = "none";
 
-        // lecture -> pause
+          document.querySelector(".cover").src = "https://music.freefakeapi.io" + truc[image.id].cover;
+          document.querySelector(".title").textContent = truc[image.id].title;
 
-        pauselec.addEventListener("click", function () {
-          pauselec.style.display = "none";
-          lecpause.style.display = "initial";
-          audio.play();
-          lecturemini.style.display = "none";
-          pausemini.style.display = "initial";
-        })
+          //js pour le lecteur
 
-        lecpause.addEventListener("click", function () {
-          lecpause.style.display = "none";
-          pauselec.style.display = "initial";
-          audio.pause();
+          coeurvide.addEventListener("click", function () {
+            coeurvide.style.display = "none";
+            coeurplein.style.display = "initial"
+          })
+
+          coeurplein.addEventListener("click", function () {
+            coeurplein.style.display = "none";
+            coeurvide.style.display = "initial"
+          })
+
+          //réduire le lecteur
+
+          flechebas.addEventListener("click", function () {
+            lecteurmini.style.display = "block";
+            lecteur.style.display = "none";
+            accueil.style.display = "block"
+          })
+
+          //agrandir le lecteur
+
+          flechehaut.addEventListener("click", function () {
+            lecteurmini.style.display = "none";
+            lecteur.style.display = "block";
+            accueil.style.display = "none"
+          })
+
+          // lecture -> pause
+
+          pauselec.addEventListener("click", function () {
+            pauselec.style.display = "none";
+            lecpause.style.display = "initial";
+            audio.play();
+            lecturemini.style.display = "none";
+            pausemini.style.display = "initial";
+          })
+
+          lecpause.addEventListener("click", function () {
+            lecpause.style.display = "none";
+            pauselec.style.display = "initial";
+            audio.pause();
+            pausemini.style.display = "none";
+            lecturemini.style.display = "initial";
+          })
+
+          //lecture mini -> pause mini
+
+          lecturemini.addEventListener("click", function () {
+            lecturemini.style.display = "none";
+            pausemini.style.display = "initial";
+            audio.play();
+            pauselec.style.display = "none";
+            lecpause.style.display = "initial";
+          })
+
+          pausemini.addEventListener("click", function () {
+            pausemini.style.display = "none";
+            lecturemini.style.display = "initial";
+            audio.pause();
+            lecpause.style.display = "none";
+            pauselec.style.display = "initial";
+          })
+
+          //le bouton stop
+          document.querySelector(".bouton_stop").addEventListener("click", function () {
+            pausemini.style.display = "none";
+            lecturemini.style.display = "initial";
+            audio.pause();
+            lecpause.style.display = "none";
+            pauselec.style.display = "initial";
+            audio.currentTime = 0;
+          })
+
           pausemini.style.display = "none";
           lecturemini.style.display = "initial";
-        })
-
-        //lecture mini -> pause mini
-
-        lecturemini.addEventListener("click", function () {
-          lecturemini.style.display = "none";
-          pausemini.style.display = "initial";
-          audio.play();
-          pauselec.style.display = "none";
-          lecpause.style.display = "initial";
-        })
-
-        pausemini.addEventListener("click", function () {
-          pausemini.style.display = "none";
-          lecturemini.style.display = "initial";
           audio.pause();
           lecpause.style.display = "none";
           pauselec.style.display = "initial";
-        })
 
-        //le bouton stop
-        document.querySelector(".bouton_stop").addEventListener("click", function () {
-          pausemini.style.display = "none";
-          lecturemini.style.display = "initial";
-          audio.pause();
-          lecpause.style.display = "none";
-          pauselec.style.display = "initial";
-          audio.currentTime = 0;
-        })
+          //la barre du lecteur
+          let range = document.querySelector("#range");
+          let rangemini = document.querySelector("#rangemini");
 
-        pausemini.style.display = "none";
-        lecturemini.style.display = "initial";
-        audio.pause();
-        lecpause.style.display = "none";
-        pauselec.style.display = "initial";
+          range.max = Number(truc[image.id].duration.slice(14, 16)) * 60 + Number(truc[image.id].duration.slice(17, 19));
+          rangemini.max = Number(truc[image.id].duration.slice(14, 16)) * 60 + Number(truc[image.id].duration.slice(17, 19));
+        });
+      }
+      );
 
-        //la barre du lecteur
-        let range = document.querySelector("#range");
-        let rangemini = document.querySelector("#rangemini");
 
-        range.max = Number(truc[image.id].duration.slice(14, 16)) * 60 + Number(truc[image.id].duration.slice(17, 19));
-        rangemini.max = Number(truc[image.id].duration.slice(14, 16)) * 60 + Number(truc[image.id].duration.slice(17, 19));
-      });
+
+
+    })
+
+  fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=played&limit=8", {
+    headers: {
+      Authorization: "Bearer " + sessionStorage.token
     }
-    );
-
-
-
-
   })
+    .then(reponse => reponse.json())
+    .then(truc => {
+      for (let id2 = 0; id2 < 8; id2++) {
+        document.querySelector(".divtest2").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id2].cover + "' id = '" + id2 + "'>");
+      }
 
-fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=played&limit=8", {
-  headers: {
-    Authorization: "Bearer " + sessionStorage.token
-  }
-})
-  .then(reponse => reponse.json())
-  .then(truc => {
-    for (let id2 = 0; id2 < 8; id2++) {
-      document.querySelector(".divtest2").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id2].cover + "' id = '" + id2 + "'>");
-    }
+      let lamusique = document.querySelector(".la_musique_trop_genial");
+      let coeurvide = document.querySelector(".coeurvide");
+      let coeurplein = document.querySelector(".coeurplein");
+      let flechebas = document.querySelector(".flechebas");
+      let lecteur = document.querySelector(".lecteur");
+      let lecteurmini = document.querySelector(".lecteurmini");
+      let flechehaut = document.querySelector(".flechehaut");
+      let pauselec = document.querySelector(".pause_lecture");
+      let lecpause = document.querySelector(".lecture_pause");
+      let lecturemini = document.querySelector(".lecturemini");
+      let pausemini = document.querySelector(".pausemini");
+      let audio = document.querySelector("audio");
 
-    let lamusique = document.querySelector(".la_musique_trop_genial");
-    let coeurvide = document.querySelector(".coeurvide");
-    let coeurplein = document.querySelector(".coeurplein");
-    let flechebas = document.querySelector(".flechebas");
-    let lecteur = document.querySelector(".lecteur");
-    let lecteurmini = document.querySelector(".lecteurmini");
-    let flechehaut = document.querySelector(".flechehaut");
-    let pauselec = document.querySelector(".pause_lecture");
-    let lecpause = document.querySelector(".lecture_pause");
-    let lecturemini = document.querySelector(".lecturemini");
-    let pausemini = document.querySelector(".pausemini");
-    let audio = document.querySelector("audio");
+      document.querySelectorAll(".divtest2 img").forEach(image => {
+        image.addEventListener("click", function () {
 
-    document.querySelectorAll(".divtest2 img").forEach(image => {
-      image.addEventListener("click", function () {
+          lamusique.src = "https://music.freefakeapi.io" + truc[image.id].file;
 
-        lamusique.src = "https://music.freefakeapi.io" + truc[image.id].file;
+          //la durée d'une musique
+          document.querySelector(".tracktime").textContent = truc[image.id].duration.slice(15);
 
-        //la durée d'une musique
-        document.querySelector(".tracktime").textContent = truc[image.id].duration.slice(15);
+          //titre_de_la_chanson
+          document.querySelector(".titre_de_la_chanson").textContent = truc[image.id].title.slice(0, 5) + "...";
 
-        //titre_de_la_chanson
-        document.querySelector(".titre_de_la_chanson").textContent = truc[image.id].title.slice(0, 5) + "...";
+          //cover_de_la_chanson
+          document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + truc[image.id].cover;
 
-        //cover_de_la_chanson
-        document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + truc[image.id].cover;
+          //artiste_de_la_chanson
+          // document.querySelector(".artiste_de_la_chanson").textContent = truc[image.id].artist
 
-        //artiste_de_la_chanson
-        // document.querySelector(".artiste_de_la_chanson").textContent = truc[image.id].artist
-
-        //le lecteur
-        lecteurmini.style.display = "none";
-        lecteur.style.display = "block";
-        accueil.style.display = "none";
-
-        document.querySelector(".cover").src = "https://music.freefakeapi.io" + truc[image.id].cover;
-        document.querySelector(".title").textContent = truc[image.id].title;
-
-        //js pour le lecteur
-
-
-        coeurvide.addEventListener("click", function () {
-          coeurvide.style.display = "none";
-          coeurplein.style.display = "initial"
-        })
-
-        coeurplein.addEventListener("click", function () {
-          coeurplein.style.display = "none";
-          coeurvide.style.display = "initial"
-        })
-
-
-
-        //réduire le lecteur
-
-        flechebas.addEventListener("click", function () {
-          lecteurmini.style.display = "block";
-          lecteur.style.display = "none";
-          accueil.style.display = "block"
-        })
-
-        //agrandir le lecteur
-
-        flechehaut.addEventListener("click", function () {
+          //le lecteur
           lecteurmini.style.display = "none";
           lecteur.style.display = "block";
-          accueil.style.display = "none"
-        })
+          accueil.style.display = "none";
 
-        // lecture -> pause
+          document.querySelector(".cover").src = "https://music.freefakeapi.io" + truc[image.id].cover;
+          document.querySelector(".title").textContent = truc[image.id].title;
 
-        pauselec.addEventListener("click", function () {
-          pauselec.style.display = "none";
-          lecpause.style.display = "initial";
-          audio.play();
-          lecturemini.style.display = "none";
-          pausemini.style.display = "initial";
-        })
+          //js pour le lecteur
 
-        lecpause.addEventListener("click", function () {
-          lecpause.style.display = "none";
-          pauselec.style.display = "initial";
-          audio.pause();
+
+          coeurvide.addEventListener("click", function () {
+            coeurvide.style.display = "none";
+            coeurplein.style.display = "initial"
+          })
+
+          coeurplein.addEventListener("click", function () {
+            coeurplein.style.display = "none";
+            coeurvide.style.display = "initial"
+          })
+
+
+
+          //réduire le lecteur
+
+          flechebas.addEventListener("click", function () {
+            lecteurmini.style.display = "block";
+            lecteur.style.display = "none";
+            accueil.style.display = "block"
+          })
+
+          //agrandir le lecteur
+
+          flechehaut.addEventListener("click", function () {
+            lecteurmini.style.display = "none";
+            lecteur.style.display = "block";
+            accueil.style.display = "none"
+          })
+
+          // lecture -> pause
+
+          pauselec.addEventListener("click", function () {
+            pauselec.style.display = "none";
+            lecpause.style.display = "initial";
+            audio.play();
+            lecturemini.style.display = "none";
+            pausemini.style.display = "initial";
+          })
+
+          lecpause.addEventListener("click", function () {
+            lecpause.style.display = "none";
+            pauselec.style.display = "initial";
+            audio.pause();
+            pausemini.style.display = "none";
+            lecturemini.style.display = "initial";
+          })
+
+          //lecture mini -> pause mini
+
+          lecturemini.addEventListener("click", function () {
+            lecturemini.style.display = "none";
+            pausemini.style.display = "initial";
+            audio.play();
+            pauselec.style.display = "none";
+            lecpause.style.display = "initial";
+          })
+
+          pausemini.addEventListener("click", function () {
+            pausemini.style.display = "none";
+            lecturemini.style.display = "initial";
+            audio.pause();
+            lecpause.style.display = "none";
+            pauselec.style.display = "initial";
+          })
+
+          //le bouton stop
+          document.querySelector(".bouton_stop").addEventListener("click", function () {
+            pausemini.style.display = "none";
+            lecturemini.style.display = "initial";
+            audio.pause();
+            lecpause.style.display = "none";
+            pauselec.style.display = "initial";
+            audio.currentTime = 0;
+          })
+
           pausemini.style.display = "none";
           lecturemini.style.display = "initial";
-        })
-
-        //lecture mini -> pause mini
-
-        lecturemini.addEventListener("click", function () {
-          lecturemini.style.display = "none";
-          pausemini.style.display = "initial";
-          audio.play();
-          pauselec.style.display = "none";
-          lecpause.style.display = "initial";
-        })
-
-        pausemini.addEventListener("click", function () {
-          pausemini.style.display = "none";
-          lecturemini.style.display = "initial";
           audio.pause();
           lecpause.style.display = "none";
           pauselec.style.display = "initial";
-        })
 
-        //le bouton stop
-        document.querySelector(".bouton_stop").addEventListener("click", function () {
-          pausemini.style.display = "none";
-          lecturemini.style.display = "initial";
-          audio.pause();
-          lecpause.style.display = "none";
-          pauselec.style.display = "initial";
-          audio.currentTime = 0;
-        })
+          //la barre du lecteur
+          let range = document.querySelector("#range");
+          let rangemini = document.querySelector("#rangemini");
 
-        pausemini.style.display = "none";
-        lecturemini.style.display = "initial";
-        audio.pause();
-        lecpause.style.display = "none";
-        pauselec.style.display = "initial";
+          range.max = Number(truc[image.id].duration.slice(14, 16)) * 60 + Number(truc[image.id].duration.slice(17, 19));
+          rangemini.max = Number(truc[image.id].duration.slice(14, 16)) * 60 + Number(truc[image.id].duration.slice(17, 19));
+        });
+      }
+      );
 
-        //la barre du lecteur
-        let range = document.querySelector("#range");
-        let rangemini = document.querySelector("#rangemini");
-
-        range.max = Number(truc[image.id].duration.slice(14, 16)) * 60 + Number(truc[image.id].duration.slice(17, 19));
-        rangemini.max = Number(truc[image.id].duration.slice(14, 16)) * 60 + Number(truc[image.id].duration.slice(17, 19));
-      });
-    }
-    );
-
-  })
-
+    })
+}
 let home = document.querySelector(".home");
 let chanteur = document.querySelector(".chanteur");
 let coeur = document.querySelector(".coeur");
@@ -545,7 +547,7 @@ function buildDuration(duration) {
 // })
 
 
-document.querySelector(".vers_connexion").addEventListener("click", function(){
+document.querySelector(".vers_connexion").addEventListener("click", function () {
   document.querySelector(".form").style.display = "none";
   document.querySelector(".formulaire_de_connexion").style.display = "block";
 })
