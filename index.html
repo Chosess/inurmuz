@@ -19,6 +19,55 @@
         <img src="images/logo.svg" alt="logo">
     </header>
 
+    <!-- inscription -->
+
+    <main class="form">
+        <form action="" method="get" class="form-example">
+            <div class="form">
+                <input type="text" class="placeholder" name="email" id="email" placeholder="e-mail" required>
+                <input type="text" class="placeholder" name="identifiant" id="identifiant" placeholder="Identifiant"
+                    required>
+                <input type="text" class="placeholder" name="motdepasse" id="motdepasse" placeholder="Mot de passe"
+                    required>
+                <input type="text" class="placeholder" name="confirmationmdp" id="confirmationmdp"
+                    placeholder="Confirmer le mot de passe" required>
+
+                <p class="wrong"></p>
+
+                <div>
+                    <input type="checkbox" id="horns" name="horns" required>
+                    <label for="horns">J’accepte les conditions d’utilisation</label>
+
+                </div>
+                <input id="submit" type="submit" value="S'inscrire">
+            </div>
+            <a href="#" class="vers_connexion">Déjà inscrit.e</a>
+        </form>
+
+    </main>
+
+
+    <!-- connexion -->
+
+    <main class="formulaire_de_connexion">
+        <form class="connexion">
+            <h1>Connexion</h1>
+
+            <input type="text" class="identifiant" name="identifiant" placeholder="Identifiant" required>
+
+            <input type="password" class="mot" name="motDePasse" placeholder="Mot de passe" required>
+
+            <p class="wrong2"></p>
+
+            <a href="reset.html" class="btn1">Mot de passe oublié</a>
+
+            <button  type="submit" class="btn2">Connexion</button>
+        </form>
+    </main>
+
+
+    <!-- accueil -->
+
     <section class="accueil">
 
         <section class="ecoute">
@@ -36,14 +85,14 @@
     <audio src="" class="la_musique_trop_genial"></audio>
 
 
-<!-- html pour le lecteur -->
+    <!-- html pour le lecteur -->
 
     <section class="lecteurmini">
         <div>
             <img src="images/coeur.svg" alt="" class="cover_de_la_chanson">
             <div>
                 <h2 class="titre_de_la_chanson">Hold on</h2>
-                <p class="elapsed_mini">0:39</p>
+                <p class="elapsed_mini">0:00</p>
             </div>
             <p class="flechehaut artiste_de_la_chanson">Miyuu</p>
         </div>
@@ -51,7 +100,7 @@
         <div class="pausemini lec"></div>
         <div>
             <input type="range" name="" id="rangemini" min="0" value="0">
-            <p class="tracktime">2:42</p>
+            <p class="tracktime">0:00</p>
         </div>
     </section>
 
@@ -81,7 +130,7 @@
                 <p>0</p>
                 <div>
                     <input type="range" name="" id="range" min="0" value="0">
-                    <p class="elapsed">0:39</p>
+                    <p class="elapsed">0:00</p>
                 </div>
                 <p>FIN</p>
             </div>

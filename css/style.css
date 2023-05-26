@@ -15,7 +15,7 @@ header > img {
 }
 
 .accueil {
-  display: initial;
+  display: none;
 }
 
 .a {
@@ -50,7 +50,6 @@ header > img {
 footer {
   background-color: black;
   color: white;
-  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -61,6 +60,7 @@ footer {
   width: 100%;
   font-family: "Bellota Text", cursive;
   font-weight: bold;
+  display: none;
 }
 footer h3 {
   margin-top: 0px;
@@ -110,6 +110,10 @@ main form {
   text-align: center;
   gap: 26px;
   font-style: italic;
+  margin-top: 20px;
+}
+.form .wrong {
+  color: red;
 }
 .form .placeholder {
   width: 237px;
@@ -133,7 +137,7 @@ main form {
   font-family: "Bellota Text";
   margin-bottom: 20px;
   border-style: none;
-  margin-top: 30px;
+  margin-top: 0;
 }
 .form a {
   font-family: "Bellota Text";
@@ -302,4 +306,69 @@ main form {
 .lecteur > div > div:nth-child(4) p {
   margin: 0;
   text-align: center;
+}
+
+.formulaire_de_connexion {
+  display: none;
+}
+
+.connexion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.connexion ::-moz-placeholder {
+  font-family: "Bellota Text";
+  color: black;
+  font-size: 16px;
+  font-style: italic;
+  text-align: center;
+}
+.connexion ::placeholder {
+  font-family: "Bellota Text";
+  color: black;
+  font-size: 16px;
+  font-style: italic;
+  text-align: center;
+}
+.connexion h1 {
+  font-family: "Bellota Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 48px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 0px;
+}
+.connexion .identifiant {
+  margin-top: 183px;
+  width: 237px;
+  height: 42px;
+  border: none;
+}
+.connexion .mot {
+  margin: 24px 0 24px;
+  width: 237px;
+  height: 42px;
+  border: none;
+}
+.connexion .btn1 {
+  color: black;
+  font-family: "Bellota Text";
+  font-size: 16px;
+  font-style: italic;
+  border: none;
+  background-color: #BED4DD;
+  margin-bottom: 120px;
+}
+.connexion .btn2 {
+  font-family: "Bellota Text";
+  font-size: 16px;
+  font-style: italic;
+  color: white;
+  background-color: black;
+  border: none;
+  width: 237px;
+  height: 42px;
 }/*# sourceMappingURL=style.css.map */

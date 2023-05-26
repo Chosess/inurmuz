@@ -1,15 +1,135 @@
-fetch("https://music.freefakeapi.io/api/login", {
-    
+document.querySelector("#submit").addEventListener("click", function () {
+  fetch("https://music.freefakeapi.io/api/register", {
     method: "post",
-    
-    
-body: JSON.stringify({
-    "email": "m.tahri552@gmail.com",
-    "password": "Unpasswordassezl0ng!"
-})
-})
+
+    body: JSON.stringify({
+      "pseudo": document.querySelector("#identifiant").value,
+      "email": document.querySelector("#email").value,
+      "password": document.querySelector("#motdepasse").value
+    })
+
+  })
     .then(reponse => reponse.json())
-    .then(token => sessionStorage.token = token.token)
+    .then(reponse => {
+
+      if (reponse.code == "403") {
+
+        if (reponse.message.email == "Invalid email") {
+
+          document.querySelector(".wrong").innerHTML = "Email invalide";
+
+        } else if (reponse.message.password[0] == "Uppercase missing") {
+
+          document.querySelector(".wrong").innerHTML = "Il manque une majuscule";
+
+        } else if (reponse.message.password[1] == "Number missing") {
+
+          document.querySelector(".wrong").innerHTML = "Il manque un nombre";
+
+        } else if (reponse.message.password[2] == "Special char missing") {
+
+          document.querySelector(".wrong").innerHTML = "Il manque un caractère spécial";
+
+        } else if (reponse.message.password[3] == "Too short, password must be at least 16 characters long") {
+
+          document.querySelector(".wrong").innerHTML = "Mot de passe trop court (au moins 16 caractère)";
+
+        }
+      } else {
+        document.querySelector(".form").style.display = "none";
+        document.querySelector(".accueil").style.display = "block";
+        document.querySelector("footer").style.display = "flex";
+
+        fetch("https://music.freefakeapi.io/api/login", {
+
+          method: "post",
+
+
+          body: JSON.stringify({
+            "email": document.querySelector("#email").value,
+            "password": document.querySelector("#motdepasse").value
+          })
+        })
+          .then(reponse => reponse.json())
+          .then(token => sessionStorage.token = token.token)
+      }
+    })
+
+  document.querySelector(".form-example").onsubmit = (e) => {
+    e.preventDefault();
+  }
+
+
+
+
+
+  // fetch("https://music.freefakeapi.io/api/login", {
+
+  //     method: "post",
+
+
+  //     body: JSON.stringify({
+  //         "email": "m.tahri552@gmail.com",
+  //         "password": "Unpasswordassezl0ng!"
+  //     })
+  // })
+  // .then(reponse => reponse.json())
+  // .then(token => console.log(token.token))
+
+
+})
+
+
+
+document.querySelector(".btn2").addEventListener("click", function(){
+  fetch("https://music.freefakeapi.io/api/login", {
+    method: "post",
+
+    body: JSON.stringify({
+      "email": document.querySelector(".identifiant").value,
+      "password": document.querySelector(".mot").value
+    })
+
+  })
+    .then(reponse => reponse.json())
+    .then(token => {
+
+      if (token.code == "403") {
+
+        document.querySelector(".wrong2").innerHTML = "Email ou Mot de passe incorrect";
+        
+      } else {
+        document.querySelector(".formulaire_de_connexion").style.display = "none";
+        document.querySelector(".accueil").style.display = "block";
+        document.querySelector("footer").style.display = "flex";
+
+        sessionStorage.token = token.token;
+
+      }
+    })
+
+  document.querySelector(".connexion").onsubmit = (e) => {
+    e.preventDefault();
+  }
+
+
+
+
+
+})
+
+// fetch("https://music.freefakeapi.io/api/login", {
+
+//   method: "post",
+
+
+//   body: JSON.stringify({
+//     "email": "m.tahri552@gmail.com",
+//     "password": "Unpasswordassezl0ng!"
+//   })
+// })
+//   .then(reponse => reponse.json())
+//   .then(token => sessionStorage.token = token.token)
 
 fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=latest&limit=10", {
   headers: {
@@ -19,8 +139,8 @@ fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=lat
   .then(reponse => reponse.json())
   .then(truc => {
     for (let id = 0; id < 10; id++) {
-      document.querySelector(".divtest").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id].cover + "' id = '" + id + "'>");
-    }
+      document.querySelector(".divtest").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id].cover + "' id = '" + id + "'>");console.log(id)
+    } 
 
     let lamusique = document.querySelector(".la_musique_trop_genial");
     let coeurvide = document.querySelector(".coeurvide");
@@ -37,7 +157,7 @@ fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=lat
 
     document.querySelectorAll(".divtest img").forEach(image => {
       image.addEventListener("click", function () {
-        
+
         lamusique.src = "https://music.freefakeapi.io" + truc[image.id].file;
 
         //la durée d'une musique
@@ -178,7 +298,7 @@ fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=pla
 
     document.querySelectorAll(".divtest2 img").forEach(image => {
       image.addEventListener("click", function () {
-        
+
         lamusique.src = "https://music.freefakeapi.io" + truc[image.id].file;
 
         //la durée d'une musique
@@ -209,10 +329,10 @@ fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=pla
           coeurplein.style.display = "initial"
         })
 
-coeurplein.addEventListener("click", function(){
-    coeurplein.style.display = "none";
-    coeurvide.style.display = "initial"
-})
+        coeurplein.addEventListener("click", function () {
+          coeurplein.style.display = "none";
+          coeurvide.style.display = "initial"
+        })
 
 
 
@@ -423,3 +543,9 @@ function buildDuration(duration) {
 //   pausemini.style.display = "none";
 //   lecturemini.style.display = "initial";
 // })
+
+
+document.querySelector(".vers_connexion").addEventListener("click", function(){
+  document.querySelector(".form").style.display = "none";
+  document.querySelector(".formulaire_de_connexion").style.display = "block";
+})

@@ -21,7 +21,7 @@ header {
 }
 
 .accueil{
-    display: initial;
+    display: none;
 }
 
 .a{
@@ -58,7 +58,6 @@ header {
 footer {
     background-color: black;
     color: white;
-    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -69,6 +68,7 @@ footer {
     width:100%;
     font-family: 'Bellota Text', cursive;
     font-weight: bold;
+    display: none;
     
 
     h3 {
@@ -123,13 +123,19 @@ main{
 }
 
 .form{
-    display: flex;
+    display: flex; 
+    // display: none; // lààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààààà
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     gap: 26px;
     font-style: italic;
+    margin-top: 20px;
+
+    .wrong{
+        color: red;
+    }
     
    .placeholder{
     width: 237px;
@@ -153,7 +159,7 @@ main{
     font-family: 'Bellota Text';
     margin-bottom: 20px;
     border-style: none;
-    margin-top: 30px;
+    margin-top: 0;
    }
    a{
     font-family: 'Bellota Text';
@@ -165,6 +171,7 @@ main{
     
    }
 }
+
 
 
 // scss pour le lecteur
@@ -357,4 +364,80 @@ main{
             }
         }
     }
+}
+
+.formulaire_de_connexion{
+    display: none;
+}
+
+.connexion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  ::placeholder {
+    font-family: "Bellota Text";
+    color: black;
+    font-size: 16px;
+    font-style: italic;
+    text-align: center;
+  }
+
+
+  h1 {
+    font-family: 'Bellota Text';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 38px;
+    line-height: 48px;
+    text-align: center;
+    color: #FFFFFF;
+    margin: 0px;
+  }
+
+  // & ::-moz-placeholder {
+  //   
+  // }
+
+  // & ::placeholder {
+  //   font-family: "Bellota Text";
+  //   font-size: 16px;
+  //   font-style: italic;
+  // }
+
+
+  .identifiant {
+    margin-top: 183px;
+    width: 237px;
+    height: 42px;
+    border: none;
+  }
+
+  .mot {
+    margin: 24px 0 24px;
+    width: 237px;
+    height: 42px;
+    border: none;
+  }
+
+  .btn1 {
+    color: black;
+    font-family: "Bellota Text";
+    font-size: 16px;
+    font-style: italic;
+    border: none;
+    background-color: #BED4DD;
+    margin-bottom: 120px;
+  }
+
+  .btn2 {
+    font-family: "Bellota Text";
+    font-size: 16px;
+    font-style: italic;
+    color: white;
+    background-color: black;
+    border: none;
+    width: 237px;
+    height: 42px;
+  }
 }
