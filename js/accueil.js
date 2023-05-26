@@ -149,6 +149,7 @@ document.querySelector(".btn2").addEventListener("click", function () {
 if (sessionStorage.token) {
   if (!sessionStorage.token == "undefinded") {
 
+  } else {
     fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=latest&limit=10", {
       headers: {
         Authorization: "Bearer " + sessionStorage.token
