@@ -34,7 +34,6 @@ fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=lat
     let lecturemini = document.querySelector(".lecturemini");
     let pausemini = document.querySelector(".pausemini");
     let audio = document.querySelector("audio");
-    let favoris = document.querySelector(".favoris")
 
     document.querySelectorAll(".divtest img").forEach(image => {
       image.addEventListener("click", function () {
