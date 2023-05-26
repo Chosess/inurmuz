@@ -1,6 +1,19 @@
+fetch("https://music.freefakeapi.io/api/login", {
+    
+    method: "post",
+    
+    
+body: JSON.stringify({
+    "email": "m.tahri552@gmail.com",
+    "password": "Unpasswordassezl0ng!"
+})
+})
+    .then(reponse => reponse.json())
+    .then(token => sessionStorage.token = token.token)
+
 fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=latest&limit=10", {
   headers: {
-    Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJlbWFpbCI6Im0udGFocmk1NTJAZ21haWwuY29tIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NTA4MTM1OSwiZXhwIjoxNjg1MTE3MzU5fQ.BmvmzMk7O78l2mcHZQHVPiPci2g3b9RoSRuUGzbszl0"
+    Authorization: "Bearer " + sessionStorage.token
   }
 })
   .then(reponse => reponse.json())
@@ -24,7 +37,7 @@ fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=lat
 
     document.querySelectorAll(".divtest img").forEach(image => {
       image.addEventListener("click", function () {
-        sessionStorage.track = JSON.stringify(truc[image.id]);
+        
         lamusique.src = "https://music.freefakeapi.io" + truc[image.id].file;
 
         //la durée d'une musique
@@ -141,7 +154,7 @@ fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=lat
 
 fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=played&limit=8", {
   headers: {
-    Authorization: "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo4LCJlbWFpbCI6Im0udGFocmk1NTJAZ21haWwuY29tIiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sImlhdCI6MTY4NTA4MTM1OSwiZXhwIjoxNjg1MTE3MzU5fQ.BmvmzMk7O78l2mcHZQHVPiPci2g3b9RoSRuUGzbszl0"
+    Authorization: "Bearer " + sessionStorage.token
   }
 })
   .then(reponse => reponse.json())
@@ -165,7 +178,7 @@ fetch("https://music.freefakeapi.io/api/tracks?page=1&nopaginate=false&order=pla
 
     document.querySelectorAll(".divtest2 img").forEach(image => {
       image.addEventListener("click", function () {
-        sessionStorage.track = JSON.stringify(truc[image.id]);
+        
         lamusique.src = "https://music.freefakeapi.io" + truc[image.id].file;
 
         //la durée d'une musique
@@ -369,6 +382,7 @@ let rangemini = document.querySelector("#rangemini");
 let elapsed = document.querySelector(".elapsed");
 let elapsedmini = document.querySelector(".elapsed_mini");
 let duration = audio.duration;
+// let pausemini = document.querySelector(".pausemini");
 
 range.addEventListener("input", function () {
   elapsed.textContent = buildDuration(audio.value);
@@ -405,7 +419,7 @@ function buildDuration(duration) {
 
 
 
-pausemini.addEventListener("click", function(){
-  pausemini.style.display = "none";
-  lecturemini.style.display = "initial";
-})
+// pausemini.addEventListener("click", function(){
+//   pausemini.style.display = "none";
+//   lecturemini.style.display = "initial";
+// })
