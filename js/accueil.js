@@ -1420,6 +1420,9 @@ let accueil = document.querySelector(".accueil");
 let favoris = document.querySelector(".favoris");
 let artistes = document.querySelector(".artistes");
 
+let lecteur = document.querySelector(".lecteur");
+let lecteurmini = document.querySelector(".lecteurmini");
+
 
 home.addEventListener("click", function () {
   accueil.style.display = "block";
