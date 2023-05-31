@@ -255,6 +255,12 @@ main{
 .lecteur {
     font-family: 'DM Sans', sans-serif;
     display: none;
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    background-color: #BED4DD;
+    width: 100vw;
+
     &>img {
         position: relative;
         left: 50%;

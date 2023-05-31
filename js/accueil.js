@@ -113,7 +113,6 @@ document.querySelector("#submit").addEventListener("click", function () {
                               //le lecteur
                               lecteurmini.style.display = "none";
                               lecteur.style.display = "block";
-                              accueil.style.display = "none";
 
                               document.querySelector(".cover").src = "https://music.freefakeapi.io" + truc[image.id].cover;
                               document.querySelector(".title").textContent = truc[image.id].title;
@@ -122,12 +121,31 @@ document.querySelector("#submit").addEventListener("click", function () {
 
                               coeurvide.addEventListener("click", function () {
                                 coeurvide.style.display = "none";
-                                coeurplein.style.display = "initial"
+                                coeurplein.style.display = "initial";
+
+                                fetch("https://music.freefakeapi.io/api/favorites", {
+                                  method: "post",
+
+                                  headers: {
+                                    Authorization: "Bearer " + sessionStorage.token
+                                  },
+
+                                  body: JSON.stringify({
+                                    track: truc[image.id].id
+                                  })
+                                }).then(reponse => reponse.json())
                               })
 
                               coeurplein.addEventListener("click", function () {
                                 coeurplein.style.display = "none";
-                                coeurvide.style.display = "initial"
+                                coeurvide.style.display = "initial";
+
+                                fetch("https://music.freefakeapi.io/api/favorites/" + truc[image.id].id, {
+                                  method: "delete",
+                                  headers: {
+                                    Authorization: "Bearer " + sessionStorage.token
+                                  }
+                                }).then(reponse => reponse.json())
                               })
 
                               //réduire le lecteur
@@ -135,7 +153,7 @@ document.querySelector("#submit").addEventListener("click", function () {
                               flechebas.addEventListener("click", function () {
                                 lecteurmini.style.display = "block";
                                 lecteur.style.display = "none";
-                                accueil.style.display = "block"
+
                               })
 
                               //agrandir le lecteur
@@ -143,7 +161,6 @@ document.querySelector("#submit").addEventListener("click", function () {
                               flechehaut.addEventListener("click", function () {
                                 lecteurmini.style.display = "none";
                                 lecteur.style.display = "block";
-                                accueil.style.display = "none"
                               })
 
                               // lecture -> pause
@@ -257,7 +274,6 @@ document.querySelector("#submit").addEventListener("click", function () {
                               //le lecteur
                               lecteurmini.style.display = "none";
                               lecteur.style.display = "block";
-                              accueil.style.display = "none";
 
                               document.querySelector(".cover").src = "https://music.freefakeapi.io" + truc[image.id].cover;
                               document.querySelector(".title").textContent = truc[image.id].title;
@@ -267,12 +283,31 @@ document.querySelector("#submit").addEventListener("click", function () {
 
                               coeurvide.addEventListener("click", function () {
                                 coeurvide.style.display = "none";
-                                coeurplein.style.display = "initial"
+                                coeurplein.style.display = "initial";
+
+                                fetch("https://music.freefakeapi.io/api/favorites", {
+                                  method: "post",
+
+                                  headers: {
+                                    Authorization: "Bearer " + sessionStorage.token
+                                  },
+
+                                  body: JSON.stringify({
+                                    track: truc[image.id].id
+                                  })
+                                }).then(reponse => reponse.json())
                               })
 
                               coeurplein.addEventListener("click", function () {
                                 coeurplein.style.display = "none";
-                                coeurvide.style.display = "initial"
+                                coeurvide.style.display = "initial";
+
+                                fetch("https://music.freefakeapi.io/api/favorites/" + truc[image.id].id, {
+                                  method: "delete",
+                                  headers: {
+                                    Authorization: "Bearer " + sessionStorage.token
+                                  }
+                                }).then(reponse => reponse.json())
                               })
 
 
@@ -282,7 +317,6 @@ document.querySelector("#submit").addEventListener("click", function () {
                               flechebas.addEventListener("click", function () {
                                 lecteurmini.style.display = "block";
                                 lecteur.style.display = "none";
-                                accueil.style.display = "block"
                               })
 
                               //agrandir le lecteur
@@ -290,7 +324,6 @@ document.querySelector("#submit").addEventListener("click", function () {
                               flechehaut.addEventListener("click", function () {
                                 lecteurmini.style.display = "none";
                                 lecteur.style.display = "block";
-                                accueil.style.display = "none"
                               })
 
                               // lecture -> pause
@@ -416,7 +449,6 @@ document.querySelector("#submit").addEventListener("click", function () {
                 //le lecteur
                 lecteurmini.style.display = "none";
                 lecteur.style.display = "block";
-                accueil.style.display = "none";
 
                 document.querySelector(".cover").src = "https://music.freefakeapi.io" + truc[image.id].cover;
                 document.querySelector(".title").textContent = truc[image.id].title;
@@ -425,12 +457,31 @@ document.querySelector("#submit").addEventListener("click", function () {
 
                 coeurvide.addEventListener("click", function () {
                   coeurvide.style.display = "none";
-                  coeurplein.style.display = "initial"
+                  coeurplein.style.display = "initial";
+
+                  fetch("https://music.freefakeapi.io/api/favorites", {
+                    method: "post",
+
+                    headers: {
+                      Authorization: "Bearer " + sessionStorage.token
+                    },
+
+                    body: JSON.stringify({
+                      track: truc[image.id].id
+                    })
+                  }).then(reponse => reponse.json())
                 })
 
                 coeurplein.addEventListener("click", function () {
                   coeurplein.style.display = "none";
-                  coeurvide.style.display = "initial"
+                  coeurvide.style.display = "initial";
+
+                  fetch("https://music.freefakeapi.io/api/favorites/" + truc[image.id].id, {
+                    method: "delete",
+                    headers: {
+                      Authorization: "Bearer " + sessionStorage.token
+                    }
+                  }).then(reponse => reponse.json())
                 })
 
                 //réduire le lecteur
@@ -438,7 +489,6 @@ document.querySelector("#submit").addEventListener("click", function () {
                 flechebas.addEventListener("click", function () {
                   lecteurmini.style.display = "block";
                   lecteur.style.display = "none";
-                  accueil.style.display = "block"
                 })
 
                 //agrandir le lecteur
@@ -446,7 +496,6 @@ document.querySelector("#submit").addEventListener("click", function () {
                 flechehaut.addEventListener("click", function () {
                   lecteurmini.style.display = "none";
                   lecteur.style.display = "block";
-                  accueil.style.display = "none"
                 })
 
                 // lecture -> pause
@@ -560,7 +609,6 @@ document.querySelector("#submit").addEventListener("click", function () {
                 //le lecteur
                 lecteurmini.style.display = "none";
                 lecteur.style.display = "block";
-                accueil.style.display = "none";
 
                 document.querySelector(".cover").src = "https://music.freefakeapi.io" + truc[image.id].cover;
                 document.querySelector(".title").textContent = truc[image.id].title;
@@ -570,12 +618,31 @@ document.querySelector("#submit").addEventListener("click", function () {
 
                 coeurvide.addEventListener("click", function () {
                   coeurvide.style.display = "none";
-                  coeurplein.style.display = "initial"
+                  coeurplein.style.display = "initial";
+
+                  fetch("https://music.freefakeapi.io/api/favorites", {
+                    method: "post",
+
+                    headers: {
+                      Authorization: "Bearer " + sessionStorage.token
+                    },
+
+                    body: JSON.stringify({
+                      track: truc[image.id].id
+                    })
+                  }).then(reponse => reponse.json())
                 })
 
                 coeurplein.addEventListener("click", function () {
                   coeurplein.style.display = "none";
-                  coeurvide.style.display = "initial"
+                  coeurvide.style.display = "initial";
+
+                  fetch("https://music.freefakeapi.io/api/favorites/" + truc[image.id].id, {
+                    method: "delete",
+                    headers: {
+                      Authorization: "Bearer " + sessionStorage.token
+                    }
+                  }).then(reponse => reponse.json())
                 })
 
 
@@ -585,7 +652,6 @@ document.querySelector("#submit").addEventListener("click", function () {
                 flechebas.addEventListener("click", function () {
                   lecteurmini.style.display = "block";
                   lecteur.style.display = "none";
-                  accueil.style.display = "block"
                 })
 
                 //agrandir le lecteur
@@ -593,7 +659,6 @@ document.querySelector("#submit").addEventListener("click", function () {
                 flechehaut.addEventListener("click", function () {
                   lecteurmini.style.display = "none";
                   lecteur.style.display = "block";
-                  accueil.style.display = "none"
                 })
 
                 // lecture -> pause
@@ -745,7 +810,6 @@ document.querySelector(".btn2").addEventListener("click", function () {
                 //le lecteur
                 lecteurmini.style.display = "none";
                 lecteur.style.display = "block";
-                accueil.style.display = "none";
 
                 document.querySelector(".cover").src = "https://music.freefakeapi.io" + truc[image.id].cover;
                 document.querySelector(".title").textContent = truc[image.id].title;
@@ -754,12 +818,31 @@ document.querySelector(".btn2").addEventListener("click", function () {
 
                 coeurvide.addEventListener("click", function () {
                   coeurvide.style.display = "none";
-                  coeurplein.style.display = "initial"
+                  coeurplein.style.display = "initial";
+
+                  fetch("https://music.freefakeapi.io/api/favorites", {
+                    method: "post",
+
+                    headers: {
+                      Authorization: "Bearer " + sessionStorage.token
+                    },
+
+                    body: JSON.stringify({
+                      track: truc[image.id].id
+                    })
+                  }).then(reponse => reponse.json())
                 })
 
                 coeurplein.addEventListener("click", function () {
                   coeurplein.style.display = "none";
-                  coeurvide.style.display = "initial"
+                  coeurvide.style.display = "initial";
+
+                  fetch("https://music.freefakeapi.io/api/favorites/" + truc[image.id].id, {
+                    method: "delete",
+                    headers: {
+                      Authorization: "Bearer " + sessionStorage.token
+                    }
+                  }).then(reponse => reponse.json())
                 })
 
                 //réduire le lecteur
@@ -767,7 +850,6 @@ document.querySelector(".btn2").addEventListener("click", function () {
                 flechebas.addEventListener("click", function () {
                   lecteurmini.style.display = "block";
                   lecteur.style.display = "none";
-                  accueil.style.display = "block"
                 })
 
                 //agrandir le lecteur
@@ -775,7 +857,6 @@ document.querySelector(".btn2").addEventListener("click", function () {
                 flechehaut.addEventListener("click", function () {
                   lecteurmini.style.display = "none";
                   lecteur.style.display = "block";
-                  accueil.style.display = "none"
                 })
 
                 // lecture -> pause
@@ -889,7 +970,6 @@ document.querySelector(".btn2").addEventListener("click", function () {
                 //le lecteur
                 lecteurmini.style.display = "none";
                 lecteur.style.display = "block";
-                accueil.style.display = "none";
 
                 document.querySelector(".cover").src = "https://music.freefakeapi.io" + truc[image.id].cover;
                 document.querySelector(".title").textContent = truc[image.id].title;
@@ -899,12 +979,31 @@ document.querySelector(".btn2").addEventListener("click", function () {
 
                 coeurvide.addEventListener("click", function () {
                   coeurvide.style.display = "none";
-                  coeurplein.style.display = "initial"
+                  coeurplein.style.display = "initial";
+
+                  fetch("https://music.freefakeapi.io/api/favorites", {
+                    method: "post",
+
+                    headers: {
+                      Authorization: "Bearer " + sessionStorage.token
+                    },
+
+                    body: JSON.stringify({
+                      track: truc[image.id].id
+                    })
+                  }).then(reponse => reponse.json())
                 })
 
                 coeurplein.addEventListener("click", function () {
                   coeurplein.style.display = "none";
-                  coeurvide.style.display = "initial"
+                  coeurvide.style.display = "initial";
+
+                  fetch("https://music.freefakeapi.io/api/favorites/" + truc[image.id].id, {
+                    method: "delete",
+                    headers: {
+                      Authorization: "Bearer " + sessionStorage.token
+                    }
+                  }).then(reponse => reponse.json())
                 })
 
 
@@ -914,7 +1013,6 @@ document.querySelector(".btn2").addEventListener("click", function () {
                 flechebas.addEventListener("click", function () {
                   lecteurmini.style.display = "block";
                   lecteur.style.display = "none";
-                  accueil.style.display = "block"
                 })
 
                 //agrandir le lecteur
@@ -922,7 +1020,6 @@ document.querySelector(".btn2").addEventListener("click", function () {
                 flechehaut.addEventListener("click", function () {
                   lecteurmini.style.display = "none";
                   lecteur.style.display = "block";
-                  accueil.style.display = "none"
                 })
 
                 // lecture -> pause
@@ -1329,6 +1426,8 @@ home.addEventListener("click", function () {
   favoris.style.display = "none";
   artistes.style.display = "none";
   // "la classe".style.display = "none";
+  lecteurmini.style.display = "block";
+  lecteur.style.display = "none";
 });
 
 
@@ -1337,6 +1436,8 @@ coeur.addEventListener("click", function () { // lààààààààààààààà
   accueil.style.display = "none";
   artistes.style.display = "none";
   // "la classe".style.display = "none";
+  lecteurmini.style.display = "block";
+  lecteur.style.display = "none";
 
   // fetch("https://music.freefakeapi.io/api/favorites", {
   //   method: "post",
@@ -1393,21 +1494,24 @@ coeur.addEventListener("click", function () { // lààààààààààààààà
 
                   //création de l'html
 
-                  favoris.insertAdjacentHTML("beforeend", "<div class='truc_favoris'> <img src='https://music.freefakeapi.io" + truc[id3].cover + "' alt='cover'> <div> <p>" + truc[id3].title + "</p> <p>" + nom.name + "</p> </div> <div> <img src='images/coeurplein.svg' alt='like' class='im" + id3 + "'> <img src='images/coeurvide.svg' alt='like' class='imc" + id3 + " dn'> <p>" + cata.name + "</p> </div> </div>");
+                  favoris.insertAdjacentHTML("beforeend", "<div class='truc_favoris'> <img src='https://music.freefakeapi.io" + truc[id3].cover + "' alt='cover'> <div> <p>" + truc[id3].title + "</p> <p>" + nom.name + "</p> </div> <div> <img src='images/coeurplein.svg' alt='like' class='im" + id3 + "'> <img src='images/coeurvide.svg' alt='like' class='imc" + id3 + " dn'> <p>" + cata.name.slice(0, 6) + " ...</p> </div> </div>");
 
-                  //le like
+                  //le dé-like
 
                   document.querySelector(".im" + id3).addEventListener("click", function () {
                     document.querySelector(".im" + id3).style.display = "none";
                     document.querySelector(".imc" + id3).style.display = "block";
 
-                    fetch("https://music.freefakeapi.io/api/favorites/14", {
+                    fetch("https://music.freefakeapi.io/api/favorites/" + truc[id3].id, {
                       method: "delete",
                       headers: {
                         Authorization: "Bearer " + sessionStorage.token
                       }
                     }).then(reponse => reponse.json())
                   });
+
+
+                  //le like
 
                   document.querySelector(".imc" + id3).addEventListener("click", function () {
                     document.querySelector(".im" + id3).style.display = "block";
@@ -1421,10 +1525,9 @@ coeur.addEventListener("click", function () { // lààààààààààààààà
                       },
 
                       body: JSON.stringify({
-                        track: id3
+                        track: truc[id3].id
                       })
                     }).then(reponse => reponse.json())
-                      .then(truc => console.log(truc))
                   });
 
                 })
@@ -1443,6 +1546,8 @@ chanteur.addEventListener("click", function () {
   accueil.style.display = "none";
   favoris.style.display = "none";
   // "la classe".style.display = "none";
+  lecteurmini.style.display = "block";
+  lecteur.style.display = "none";
 });
 
 perso.addEventListener("click", function () {
@@ -1450,6 +1555,8 @@ perso.addEventListener("click", function () {
   accueil.style.display = "none";
   favoris.style.display = "none";
   // "la classe".style.display = "block";
+  lecteurmini.style.display = "block";
+  lecteur.style.display = "none";
 })
 
 
