@@ -1317,81 +1317,115 @@ let home = document.querySelector(".home");
 let chanteur = document.querySelector(".chanteur");
 let coeur = document.querySelector(".coeur");
 let perso = document.querySelector(".perso");
+
+
 let accueil = document.querySelector(".accueil");
+let favoris = document.querySelector(".favoris");
+let artistes = document.querySelector(".artistes");
 
 
 home.addEventListener("click", function () {
-  accueil.style.display = "initial"
+  accueil.style.display = "block";
+  favoris.style.display = "none";
+  artistes.style.display = "none";
+  // "la classe".style.display = "none";
+});
+
+
+coeur.addEventListener("click", function () { // lààààààààààààààààààààààààààààààààààààààààààààààààààààààààà
+  favoris.style.display = "block";
+  accueil.style.display = "none";
+  artistes.style.display = "none";
+  // "la classe".style.display = "none";
+
+  // fetch("https://music.freefakeapi.io/api/favorites", {
+  //   method: "post",
+
+  //   headers: {
+  //     Authorization: "Bearer " + sessionStorage.token
+  //   },
+
+  //   body: JSON.stringify({
+  //     track: 53
+  //   })
+  // }).then(reponse => reponse.json())
+  //   .then(truc => console.log(truc))
+
+
+  //fetch des favoris
+
+  fetch("https://music.freefakeapi.io/api/favorites", {
+    headers: {
+      Authorization: "Bearer " + sessionStorage.token
+    }
+  }).then(reponse => reponse.json())
+    .then(truc => {
+      // console.log(truc);
+      favoris.innerHTML = "";
+
+      //boucle pour récupérer tous les favoris
+
+      for (let id3 = 0; id3 < truc.length; id3++) {
+
+        //fetch des artistes
+
+        fetch("https://music.freefakeapi.io" + truc[id3].artist, {
+          headers: {
+            Authorization: "Bearer " + sessionStorage.token
+          }
+        }).then(reponse => reponse.json())
+          .then(nom => {
+            // console.log(nom);
+
+            //boucle pour récupérer tous les artistes
+
+            for (let id4 = 0; id4 < 1; id4++) {
+
+              //fetch des catégories
+
+              fetch("https://music.freefakeapi.io" + truc[id3].categories[id4], {
+                headers: {
+                  Authorization: "Bearer " + sessionStorage.token
+                }
+              }).then(reponse => reponse.json())
+              .then(cata => {
+                // console.log(cata);
+
+                //création de l'html
+
+                favoris.insertAdjacentHTML("beforeend", "<div class='truc_favoris'> <img src='https://music.freefakeapi.io" + truc[id3].cover + "' alt='cover'> <div> <p>" + truc[id3].title + "</p> <p>" + nom.name + "</p> </div> <div> <img src='images/coeurplein.svg' alt='like' class='" + id3 + "'> <p>" + cata.name.slice(0, 5) + "</p> </div> </div>");
+              })
+            }
+          })
+      }
+
+      // document.querySelector
+
+
+
+
+    });
+
+
+
+});
+
+
+chanteur.addEventListener("click", function () {
+  artistes.style.display = "block";
+  accueil.style.display = "none";
+  favoris.style.display = "none";
+  // "la classe".style.display = "none";
+});
+
+perso.addEventListener("click", function () {
+  artistes.style.display = "none";
+  accueil.style.display = "none";
+  favoris.style.display = "none";
+  // "la classe".style.display = "block";
 })
 
 
-
-
-// //js pour le lecteur
-
-// let coeurvide = document.querySelector(".coeurvide");
-// let coeurplein = document.querySelector(".coeurplein");
-
-// coeurvide.addEventListener("click", function () {
-//   coeurvide.style.display = "none";
-//   coeurplein.style.display = "initial"
-// })
-
-// coeurplein.addEventListener("click", function () {
-//   coeurplein.style.display = "none";
-//   coeurvide.style.display = "initial"
-// })
-
-// let flechebas = document.querySelector(".flechebas");
-// let lecteur = document.querySelector(".lecteur");
-// let lecteurmini = document.querySelector(".lecteurmini");
-// let flechehaut = document.querySelector(".flechehaut");
-
-// //réduire le lecteur
-
-// flechebas.addEventListener("click", function () {
-//   lecteurmini.style.display = "block";
-//   lecteur.style.display = "none";
-//   accueil.style.display = "block"
-// })
-
-// //agrandir le lecteur
-
-// flechehaut.addEventListener("click", function () {
-//   lecteurmini.style.display = "none";
-//   lecteur.style.display = "block";
-//   accueil.style.display = "none"
-// })
-
-// // lecture -> pause
-
-// let pauselec = document.querySelector(".pause_lecture");
-// let lecpause = document.querySelector(".lecture_pause");
-
-// pauselec.addEventListener("click", function () {
-//   pauselec.style.display = "none";
-//   lecpause.style.display = "initial";
-// })
-
-// lecpause.addEventListener("click", function () {
-//   lecpause.style.display = "none";
-//   pauselec.style.display = "initial";
-// })
-
-// //lecture mini -> pause mini
-
-// let lecturemini = document.querySelector(".lecturemini");
-// let pausemini = document.querySelector(".pausemini");
-
-// lecturemini.addEventListener("click", function () {
-//   lecturemini.style.display = "none";
-//   pausemini.style.display = "initial";
-// })
-
-// pausemini.addEventListener("click", function () {
-//   pausemini.style.display = "none";
-//   lecturemini.style.display = "initial";
-// })
 
 let audio = document.querySelector("audio");
 let range = document.querySelector("#range");
@@ -1445,4 +1479,4 @@ function buildDuration(duration) {
 document.querySelector(".vers_connexion").addEventListener("click", function () {
   document.querySelector(".form").style.display = "none";
   document.querySelector(".formulaire_de_connexion").style.display = "block";
-})
+});

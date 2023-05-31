@@ -371,4 +371,58 @@ main form {
   border: none;
   width: 237px;
   height: 42px;
+}
+
+.favoris {
+  display: none;
+  margin-top: 75px;
+}
+.favoris .truc_favoris {
+  width: 270px;
+  height: 55px;
+  border: 1px solid black;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.favoris .truc_favoris p {
+  margin: 0;
+}
+.favoris .truc_favoris > div:first-of-type {
+  width: 150px;
+}
+.favoris .truc_favoris > p {
+  margin-top: 20px;
+}
+.favoris .truc_favoris > img {
+  width: 40px;
+  height: 40px;
+}
+.favoris .truc_favoris > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.favoris .truc_favoris > div:last-child > img {
+  width: 30px;
+  height: 30px;
+}
+
+.artistes {
+  display: none;
+}
+.artistes .un_artiste {
+  width: 270px;
+  height: 55px;
+  border: 1px solid black;
+  margin: auto;
+  margin-top: 75px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.artistes .un_artiste p, .artistes .un_artiste img {
+  margin: 10px;
 }/*# sourceMappingURL=style.css.map */
