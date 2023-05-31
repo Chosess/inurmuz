@@ -48,6 +48,8 @@ document.querySelector("#submit").addEventListener("click", function () {
                 document.querySelector(".wrong").innerHTML = "Mot de passe trop court (au moins 16 caractère)";
 
               }
+            } else if(reponse.code == "400"){
+              
             } else {
               document.querySelector(".form").style.display = "none";
               document.querySelector(".accueil").style.display = "block";
