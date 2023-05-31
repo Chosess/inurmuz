@@ -425,4 +425,8 @@ main form {
 }
 .artistes .un_artiste p, .artistes .un_artiste img {
   margin: 10px;
+}
+
+.dn {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

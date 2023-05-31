@@ -1388,22 +1388,49 @@ coeur.addEventListener("click", function () { // lààààààààààààààà
                   Authorization: "Bearer " + sessionStorage.token
                 }
               }).then(reponse => reponse.json())
-              .then(cata => {
-                // console.log(cata);
+                .then(cata => {
+                  // console.log(cata);
 
-                //création de l'html
+                  //création de l'html
 
-                favoris.insertAdjacentHTML("beforeend", "<div class='truc_favoris'> <img src='https://music.freefakeapi.io" + truc[id3].cover + "' alt='cover'> <div> <p>" + truc[id3].title + "</p> <p>" + nom.name + "</p> </div> <div> <img src='images/coeurplein.svg' alt='like' class='" + id3 + "'> <p>" + cata.name.slice(0, 5) + "</p> </div> </div>");
-              })
+                  favoris.insertAdjacentHTML("beforeend", "<div class='truc_favoris'> <img src='https://music.freefakeapi.io" + truc[id3].cover + "' alt='cover'> <div> <p>" + truc[id3].title + "</p> <p>" + nom.name + "</p> </div> <div> <img src='images/coeurplein.svg' alt='like' class='im" + id3 + "'> <img src='images/coeurvide.svg' alt='like' class='imc" + id3 + " dn'> <p>" + cata.name + "</p> </div> </div>");
+
+                  //le like
+
+                  document.querySelector(".im" + id3).addEventListener("click", function () {
+                    document.querySelector(".im" + id3).style.display = "none";
+                    document.querySelector(".imc" + id3).style.display = "block";
+
+                    fetch("https://music.freefakeapi.io/api/favorites/14", {
+                      method: "delete",
+                      headers: {
+                        Authorization: "Bearer " + sessionStorage.token
+                      }
+                    }).then(reponse => reponse.json())
+                  });
+
+                  document.querySelector(".imc" + id3).addEventListener("click", function () {
+                    document.querySelector(".im" + id3).style.display = "block";
+                    document.querySelector(".imc" + id3).style.display = "none";
+
+                    fetch("https://music.freefakeapi.io/api/favorites", {
+                      method: "post",
+
+                      headers: {
+                        Authorization: "Bearer " + sessionStorage.token
+                      },
+
+                      body: JSON.stringify({
+                        track: id3
+                      })
+                    }).then(reponse => reponse.json())
+                      .then(truc => console.log(truc))
+                  });
+
+                })
             }
           })
       }
-
-      // document.querySelector
-
-
-
-
     });
 
 
