@@ -220,6 +220,7 @@ main form {
   z-index: 10;
   background-color: #BED4DD;
   width: 100vw;
+  height: 100vh;
 }
 .lecteur > img {
   position: relative;
@@ -417,21 +418,88 @@ main form {
 
 .artistes {
   display: none;
+  margin-top: 75px;
 }
 .artistes .un_artiste {
   width: 270px;
   height: 55px;
   border: 1px solid black;
   margin: auto;
-  margin-top: 75px;
+  margin-top: 20px;
   display: flex;
   align-items: center;
-  gap: 20px;
 }
 .artistes .un_artiste p, .artistes .un_artiste img {
   margin: 10px;
 }
+.artistes .un_artiste img {
+  width: 40px;
+  height: 40px;
+}
 
 .dn {
   display: none;
+}
+
+.un_petit_artiste {
+  display: none;
+  margin-top: 75px;
+}
+.un_petit_artiste .l_artiste {
+  background-color: #000000;
+  width: 300px;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.un_petit_artiste .l_artiste div {
+  margin: 5px;
+}
+.un_petit_artiste .l_artiste p {
+  margin: 0;
+  font-size: 13px;
+}
+.un_petit_artiste .l_artiste p:first-child {
+  font-size: 14px;
+}
+.un_petit_artiste .l_artiste img {
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+}
+.un_petit_artiste .les_chansons {
+  width: 270px;
+  height: 55px;
+  border: 1px solid black;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.un_petit_artiste .les_chansons > img, .un_petit_artiste .les_chansons > div {
+  margin: 5px;
+}
+.un_petit_artiste .les_chansons p {
+  margin: 0;
+}
+.un_petit_artiste .les_chansons > div:first-of-type {
+  width: 150px;
+}
+.un_petit_artiste .les_chansons > p {
+  margin-top: 20px;
+}
+.un_petit_artiste .les_chansons > img {
+  width: 40px;
+  height: 40px;
+}
+.un_petit_artiste .les_chansons > div:last-child {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+.un_petit_artiste .les_chansons > div:last-child > img {
+  width: 30px;
+  height: 30px;
 }/*# sourceMappingURL=style.css.map */
