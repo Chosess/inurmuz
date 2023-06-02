@@ -49,7 +49,7 @@ document.querySelector("#submit").addEventListener("click", function () {
 
               }
             } else if (reponse.code == "400") {
-
+              //viebviehnvihdiu,vehiurguhgcgdddddffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
             } else {
               document.querySelector(".form").style.display = "none";
               document.querySelector(".accueil").style.display = "block";
@@ -111,6 +111,17 @@ document.querySelector("#submit").addEventListener("click", function () {
 
                               //cover_de_la_chanson
                               document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + truc[image.id].cover;
+
+                              //l'artiste
+                              fetch("https://music.freefakeapi.io" + truc[image.id].artist, {
+                                headers: {
+                                  Authorization: "Bearer " + sessionStorage.token
+                                }
+                              }).then(reponse => reponse.json())
+                                .then(lenom => {
+                                  document.querySelector(".artiste_de_la_chanson").textContent = lenom.name;
+                                  document.querySelector(".artiste_chanson").textContent = lenom.name;
+                                })
 
                               //le lecteur
                               lecteurmini.style.display = "none";
@@ -283,8 +294,16 @@ document.querySelector("#submit").addEventListener("click", function () {
                               //cover_de_la_chanson
                               document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + truc[image.id].cover;
 
-                              //artiste_de_la_chanson
-                              // document.querySelector(".artiste_de_la_chanson").textContent = truc[image.id].artist
+                              //l'artiste
+                              fetch("https://music.freefakeapi.io" + truc[image.id].artist, {
+                                headers: {
+                                  Authorization: "Bearer " + sessionStorage.token
+                                }
+                              }).then(reponse => reponse.json())
+                                .then(lenom => {
+                                  document.querySelector(".artiste_de_la_chanson").textContent = lenom.name;
+                                  document.querySelector(".artiste_chanson").textContent = lenom.name;
+                                })
 
                               //le lecteur
                               lecteurmini.style.display = "none";
@@ -430,6 +449,7 @@ document.querySelector("#submit").addEventListener("click", function () {
           e.preventDefault();
         }
       } else {
+
         document.querySelector(".form").style.display = "none";
         document.querySelector(".accueil").style.display = "block";
         document.querySelector("footer").style.display = "flex";
@@ -474,6 +494,19 @@ document.querySelector("#submit").addEventListener("click", function () {
 
                 //cover_de_la_chanson
                 document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + truc[image.id].cover;
+
+
+                //l'artiste
+                fetch("https://music.freefakeapi.io" + truc[image.id].artist, {
+                  headers: {
+                    Authorization: "Bearer " + sessionStorage.token
+                  }
+                }).then(reponse => reponse.json())
+                  .then(lenom => {
+                    document.querySelector(".artiste_de_la_chanson").textContent = lenom.name;
+                    document.querySelector(".artiste_chanson").textContent = lenom.name;
+                  })
+
 
                 //le lecteur
                 lecteurmini.style.display = "none";
@@ -645,8 +678,16 @@ document.querySelector("#submit").addEventListener("click", function () {
                 //cover_de_la_chanson
                 document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + truc[image.id].cover;
 
-                //artiste_de_la_chanson
-                // document.querySelector(".artiste_de_la_chanson").textContent = truc[image.id].artist
+                //l'artiste
+                fetch("https://music.freefakeapi.io" + truc[image.id].artist, {
+                  headers: {
+                    Authorization: "Bearer " + sessionStorage.token
+                  }
+                }).then(reponse => reponse.json())
+                  .then(lenom => {
+                    document.querySelector(".artiste_de_la_chanson").textContent = lenom.name;
+                document.querySelector(".artiste_chanson").textContent = lenom.name;
+                  })
 
                 //le lecteur
                 lecteurmini.style.display = "none";
@@ -861,6 +902,17 @@ document.querySelector(".btn2").addEventListener("click", function () {
                 //cover_de_la_chanson
                 document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + truc[image.id].cover;
 
+                //l'artiste
+                fetch("https://music.freefakeapi.io" + truc[image.id].artist, {
+                  headers: {
+                    Authorization: "Bearer " + sessionStorage.token
+                  }
+                }).then(reponse => reponse.json())
+                  .then(lenom => {
+                    document.querySelector(".artiste_de_la_chanson").textContent = lenom.name;
+                document.querySelector(".artiste_chanson").textContent = lenom.name;
+                  })
+
                 //le lecteur
                 lecteurmini.style.display = "none";
                 lecteur.style.display = "block";
@@ -1031,8 +1083,16 @@ document.querySelector(".btn2").addEventListener("click", function () {
                 //cover_de_la_chanson
                 document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + truc[image.id].cover;
 
-                //artiste_de_la_chanson
-                // document.querySelector(".artiste_de_la_chanson").textContent = truc[image.id].artist
+                //l'artiste
+                fetch("https://music.freefakeapi.io" + truc[image.id].artist, {
+                  headers: {
+                    Authorization: "Bearer " + sessionStorage.token
+                  }
+                }).then(reponse => reponse.json())
+                  .then(lenom => {
+                    document.querySelector(".artiste_de_la_chanson").textContent = lenom.name;
+                document.querySelector(".artiste_chanson").textContent = lenom.name;
+                  })
 
                 //le lecteur
                 lecteurmini.style.display = "none";
@@ -1983,37 +2043,37 @@ chanteur.addEventListener("click", function () {
                 //   }).then(reponse => reponse.json())
                 // });
 
-                
-                document.querySelector(".les_chansons" + ide).addEventListener("click",function(){
-                  
+
+                document.querySelector(".les_chansons" + ide).addEventListener("click", function () {
+
                   document.querySelector("audio").src = "https://music.freefakeapi.io" + musics.file;
-                    lecteur.style.display = "block";
+                  lecteur.style.display = "block";
 
-                    //la durée d'une musique
-                    document.querySelector(".tracktime").textContent = musics.duration.slice(15);
+                  //la durée d'une musique
+                  document.querySelector(".tracktime").textContent = musics.duration.slice(15);
 
-                    //titre_de_la_chanson
-                    document.querySelector(".titre_de_la_chanson").textContent = musics.title.slice(0, 5) + "...";
+                  //titre_de_la_chanson
+                  document.querySelector(".titre_de_la_chanson").textContent = musics.title.slice(0, 5) + "...";
 
-                    //cover_de_la_chanson
-                    document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + musics.cover;
+                  //cover_de_la_chanson
+                  document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + musics.cover;
 
-                    //l'artiste
-                    document.querySelector(".artiste_de_la_chanson").textContent = arts[idd].name;
-                    document.querySelector(".artiste_chanson").textContent = arts[idd].name;
+                  //l'artiste
+                  document.querySelector(".artiste_de_la_chanson").textContent = arts[idd].name;
+                  document.querySelector(".artiste_chanson").textContent = arts[idd].name;
 
 
-                    //le lecteur
+                  //le lecteur
 
-                    document.querySelector(".cover").src = "https://music.freefakeapi.io" + musics.cover;
-                    document.querySelector(".title").textContent = musics.title;
+                  document.querySelector(".cover").src = "https://music.freefakeapi.io" + musics.cover;
+                  document.querySelector(".title").textContent = musics.title;
 
-                    //la barre du lecteur
-                    let range = document.querySelector("#range");
-                    let rangemini = document.querySelector("#rangemini");
+                  //la barre du lecteur
+                  let range = document.querySelector("#range");
+                  let rangemini = document.querySelector("#rangemini");
 
-                    range.max = Number(musics.duration.slice(14, 16)) * 60 + Number(musics.duration.slice(17, 19));
-                    rangemini.max = Number(musics.duration.slice(14, 16)) * 60 + Number(musics.duration.slice(17, 19));
+                  range.max = Number(musics.duration.slice(14, 16)) * 60 + Number(musics.duration.slice(17, 19));
+                  rangemini.max = Number(musics.duration.slice(14, 16)) * 60 + Number(musics.duration.slice(17, 19));
                 })
               })
           }
