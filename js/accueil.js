@@ -24,6 +24,7 @@ document.querySelector("#submit").addEventListener("click", function () {
   })
     .then(reponse => reponse.json())
     .then(token2 => {
+      // console.log(token2)
 
       if (token2.code == "403") {
         fetch("https://music.freefakeapi.io/api/register", {
@@ -99,7 +100,7 @@ document.querySelector("#submit").addEventListener("click", function () {
                             document.querySelector(".divtest").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id].cover + "' id = '" + id + "'>");
                           }
 
-                          
+
 
                           document.querySelectorAll(".divtest img").forEach(image => {
                             image.addEventListener("click", function () {
@@ -124,7 +125,7 @@ document.querySelector("#submit").addEventListener("click", function () {
                               }
 
                               coeurvide.setAttribute("data-id", truc[image.id].id);
-                coeurplein.setAttribute("data-id", truc[image.id].id);
+                              coeurplein.setAttribute("data-id", truc[image.id].id);
 
                               //l'artiste
                               fetch("https://music.freefakeapi.io" + truc[image.id].artist, {
@@ -240,7 +241,7 @@ document.querySelector("#submit").addEventListener("click", function () {
                             document.querySelector(".divtest2").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id2].cover + "' id = '" + id2 + "'>");
                           }
 
-                          
+
 
                           document.querySelectorAll(".divtest2 img").forEach(image => {
                             image.addEventListener("click", function () {
@@ -265,7 +266,7 @@ document.querySelector("#submit").addEventListener("click", function () {
                               }
 
                               coeurvide.setAttribute("data-id", truc[image.id].id);
-                coeurplein.setAttribute("data-id", truc[image.id].id);
+                              coeurplein.setAttribute("data-id", truc[image.id].id);
 
                               //l'artiste
                               fetch("https://music.freefakeapi.io" + truc[image.id].artist, {
@@ -380,6 +381,8 @@ document.querySelector("#submit").addEventListener("click", function () {
         document.querySelector(".form-example").onsubmit = (e) => {
           e.preventDefault();
         }
+      } else if (token2.code == "400") {
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
       } else {
 
         document.querySelector(".form").style.display = "none";
@@ -400,7 +403,7 @@ document.querySelector("#submit").addEventListener("click", function () {
               document.querySelector(".divtest").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id].cover + "' id = '" + id + "'>");
             }
 
-            
+
 
             document.querySelectorAll(".divtest img").forEach(image => {
               image.addEventListener("click", function () {
@@ -543,7 +546,7 @@ document.querySelector("#submit").addEventListener("click", function () {
               document.querySelector(".divtest2").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id2].cover + "' id = '" + id2 + "'>");
             }
 
-            
+
 
             document.querySelectorAll(".divtest2 img").forEach(image => {
               image.addEventListener("click", function () {
@@ -727,7 +730,7 @@ document.querySelector(".btn2").addEventListener("click", function () {
               document.querySelector(".divtest").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id].cover + "' id = '" + id + "'>");
             }
 
-            
+
 
             document.querySelectorAll(".divtest img").forEach(image => {
               image.addEventListener("click", function () {
@@ -868,7 +871,7 @@ document.querySelector(".btn2").addEventListener("click", function () {
               document.querySelector(".divtest2").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id2].cover + "' id = '" + id2 + "'>");
             }
 
-            
+
 
             document.querySelectorAll(".divtest2 img").forEach(image => {
               image.addEventListener("click", function () {
@@ -1031,7 +1034,7 @@ home.addEventListener("click", function () {
   lecteur.style.display = "none";
   document.querySelector("body").style.overflow = "initial";
   unartiste.style.display = "none";
-  if (document.querySelector(".la_musique_trop_genial").src == "" || document.querySelector(".la_musique_trop_genial").src == "http://127.0.0.1:5500/index.html") {
+  if (document.querySelector(".la_musique_trop_genial").src == "" || document.querySelector(".la_musique_trop_genial").src.slice(-10) == "index.html") {
     lecteurmini.style.display = "none";
   } else {
     lecteurmini.style.display = "block";
@@ -1049,7 +1052,7 @@ home.addEventListener("click", function () {
         document.querySelector(".divtest").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id].cover + "' id = '" + id + "'>");
       }
 
-      
+
       document.querySelectorAll(".divtest img").forEach(image => {
         image.addEventListener("click", function () {
 
@@ -1073,7 +1076,7 @@ home.addEventListener("click", function () {
           }
 
           coeurvide.setAttribute("data-id", truc[image.id].id);
-                coeurplein.setAttribute("data-id", truc[image.id].id);
+          coeurplein.setAttribute("data-id", truc[image.id].id);
 
           //l'artiste
           fetch("https://music.freefakeapi.io" + truc[image.id].artist, {
@@ -1189,7 +1192,7 @@ home.addEventListener("click", function () {
         document.querySelector(".divtest2").insertAdjacentHTML("beforeend", "<img src='https://music.freefakeapi.io" + truc[id2].cover + "' id = '" + id2 + "'>");
       }
 
-     
+
       document.querySelectorAll(".divtest2 img").forEach(image => {
         image.addEventListener("click", function () {
 
@@ -1213,7 +1216,7 @@ home.addEventListener("click", function () {
           }
 
           coeurvide.setAttribute("data-id", truc[image.id].id);
-                coeurplein.setAttribute("data-id", truc[image.id].id);
+          coeurplein.setAttribute("data-id", truc[image.id].id);
 
           //l'artiste
           fetch("https://music.freefakeapi.io" + truc[image.id].artist, {
@@ -1328,7 +1331,7 @@ coeur.addEventListener("click", function () { // lààààààààààààààà
   lecteur.style.display = "none";
   document.querySelector("body").style.overflow = "initial";
   unartiste.style.display = "none";
-  if (document.querySelector(".la_musique_trop_genial").src == "" || document.querySelector(".la_musique_trop_genial").src == "http://127.0.0.1:5500/index.html") {
+  if (document.querySelector(".la_musique_trop_genial").src == "" || document.querySelector(".la_musique_trop_genial").src.slice(-10) == "index.html") {
     lecteurmini.style.display = "none";
   } else {
     lecteurmini.style.display = "block";
@@ -1378,7 +1381,7 @@ coeur.addEventListener("click", function () { // lààààààààààààààà
 
                   favoris.insertAdjacentHTML("beforeend", "<div class='truc_favoris truc_favoris" + id3 + "'> <img src='https://music.freefakeapi.io" + truc[id3].cover + "' alt='cover'> <div> <p>" + truc[id3].title + "</p> <p>" + nom.name + "</p> </div> <div> <img src='images/coeurplein.svg' alt='like' class='im" + id3 + "'> <img src='images/coeurvide.svg' alt='like' class='imc" + id3 + " dn'> <p>" + cata.name.slice(0, 6) + " ...</p> </div> </div>");
 
-                  
+
 
                   //le click sur une musique
 
@@ -1394,8 +1397,8 @@ coeur.addEventListener("click", function () { // lààààààààààààààà
 
                     //cover_de_la_chanson
                     document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + truc[id3].cover;
-
-                    if (truc[image.id].is_favorite == "true") {
+                    
+                    if (truc[id3].is_favorite == "true") {
                       coeurvide.style.display = "none";
                       coeurplein.style.display = "initial";
                     } else {
@@ -1403,8 +1406,8 @@ coeur.addEventListener("click", function () { // lààààààààààààààà
                       coeurvide.style.display = "initial";
                     }
 
-                    coeurvide.setAttribute("data-id", truc[image.id].id);
-                coeurplein.setAttribute("data-id", truc[image.id].id);
+                    coeurvide.setAttribute("data-id", truc[id3].id);
+                    coeurplein.setAttribute("data-id", truc[id3].id);
 
                     //l'artiste
                     document.querySelector(".artiste_de_la_chanson").textContent = nom.name;
@@ -1515,7 +1518,8 @@ chanteur.addEventListener("click", function () {
   // "la classe".style.display = "none";
   lecteur.style.display = "none";
   document.querySelector("body").style.overflow = "initial";
-  if (document.querySelector(".la_musique_trop_genial").src == "" || document.querySelector(".la_musique_trop_genial").src == "http://127.0.0.1:5500/index.html") {
+  
+  if (document.querySelector(".la_musique_trop_genial").src == "" || document.querySelector(".la_musique_trop_genial").src.slice(-10) == "index.html") {
     lecteurmini.style.display = "none";
   } else {
     lecteurmini.style.display = "block";
@@ -1540,7 +1544,7 @@ chanteur.addEventListener("click", function () {
           unartiste.style.display = "block";
           document.querySelector(".nomart").textContent = arts[idd].name;
           document.querySelector(".nbart").textContent = arts[idd].tracks.length + " titre(s)";
-          document.querySelector(".tempsart").textContent = "La flemme";
+          document.querySelector(".tempsart").textContent = "La flemme";//làààààààààààààààààààààààààààààààààààààààààààààààààààààààààà
           document.querySelector(".l_image_de_l_artiste").src = "https://music.freefakeapi.io" + arts[idd].picture;
 
           // document.querySelector(".la_fameuse_div").innerHTML = "";
@@ -1642,7 +1646,7 @@ chanteur.addEventListener("click", function () {
                   //cover_de_la_chanson
                   document.querySelector(".cover_de_la_chanson").src = "https://music.freefakeapi.io" + musics.cover;
 
-                  if (truc[image.id].is_favorite == "true") {
+                  if (arts[idd].is_favorite == "true") {
                     coeurvide.style.display = "none";
                     coeurplein.style.display = "initial";
                   } else {
@@ -1650,8 +1654,8 @@ chanteur.addEventListener("click", function () {
                     coeurvide.style.display = "initial";
                   }
 
-                  coeurvide.setAttribute("data-id", truc[image.id].id);
-                coeurplein.setAttribute("data-id", truc[image.id].id);
+                  coeurvide.setAttribute("data-id", arts[idd].id);
+                  coeurplein.setAttribute("data-id", arts[idd].id);
 
                   //l'artiste
                   document.querySelector(".artiste_de_la_chanson").textContent = arts[idd].name;
@@ -1734,7 +1738,7 @@ function buildDuration(duration) {
 
 
 
-pausemini.addEventListener("click", function(){
+pausemini.addEventListener("click", function () {
   pausemini.style.display = "none";
   lecturemini.style.display = "initial";
 })
