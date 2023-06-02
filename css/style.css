@@ -62,6 +62,7 @@ footer {
   font-family: "Bellota Text", cursive;
   font-weight: bold;
   display: none;
+  z-index: 12;
 }
 footer h3 {
   margin-top: 0px;
@@ -112,6 +113,16 @@ main form {
   gap: 26px;
   font-style: italic;
   margin-top: 20px;
+}
+.form h1 {
+  font-family: "Bellota Text";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 38px;
+  line-height: 48px;
+  text-align: center;
+  color: #FFFFFF;
+  margin: 20px 0 0 0;
 }
 .form .wrong {
   color: red;
@@ -346,10 +357,10 @@ main form {
   line-height: 48px;
   text-align: center;
   color: #FFFFFF;
-  margin: 0px;
+  margin: 50px 0 0 0;
 }
 .connexion .identifiant {
-  margin-top: 183px;
+  margin-top: 130px;
   width: 237px;
   height: 42px;
   border: none;

@@ -71,6 +71,7 @@ footer {
     font-family: 'Bellota Text', cursive;
     font-weight: bold;
     display: none;
+    z-index: 12;
     
 
     h3 {
@@ -134,6 +135,16 @@ main{
     gap: 26px;
     font-style: italic;
     margin-top: 20px;
+    h1 {
+        font-family: 'Bellota Text';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 38px;
+        line-height: 48px;
+        text-align: center;
+        color: #FFFFFF;
+        margin: 20px 0 0 0;
+      }
 
     .wrong{
         color: red;
@@ -401,7 +412,7 @@ main{
     line-height: 48px;
     text-align: center;
     color: #FFFFFF;
-    margin: 0px;
+    margin: 50px 0 0 0;
   }
 
   // & ::-moz-placeholder {
@@ -416,7 +427,7 @@ main{
 
 
   .identifiant {
-    margin-top: 183px;
+    margin-top: 130px;
     width: 237px;
     height: 42px;
     border: none;
