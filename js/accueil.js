@@ -2085,10 +2085,10 @@ function buildDuration(duration) {
 // })
 
 
-// document.querySelector(".vers_connexion").addEventListener("click", function () {
-//   document.querySelector(".form").style.display = "none";
-//   document.querySelector(".formulaire_de_connexion").style.display = "block";
-// });
+document.querySelector(".vers_connexion").addEventListener("click", function () {
+  document.querySelector(".form").style.display = "none";
+  document.querySelector(".formulaire_de_connexion").style.display = "block";
+});
 
 
 // il faut trouver comment fonctionne la putain de source sa mère
