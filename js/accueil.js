@@ -1653,7 +1653,7 @@ coeur.addEventListener("click", function () { // lààààààààààààààà
                       },
 
                       body: JSON.stringify({
-                        track: truc[image.id].id
+                        track: truc[id3].id
                       })
                     }).then(reponse => reponse.json())
                   })
@@ -1662,7 +1662,7 @@ coeur.addEventListener("click", function () { // lààààààààààààààà
                     coeurplein.style.display = "none";
                     coeurvide.style.display = "initial";
 
-                    fetch("https://music.freefakeapi.io/api/favorites/" + truc[image.id].id, {
+                    fetch("https://music.freefakeapi.io/api/favorites/" + truc[id3].id, {
                       method: "delete",
                       headers: {
                         Authorization: "Bearer " + sessionStorage.token
@@ -1861,7 +1861,7 @@ chanteur.addEventListener("click", function () {
                     },
 
                     body: JSON.stringify({
-                      track: truc[image.id].id
+                      track: musics.id
                     })
                   }).then(reponse => reponse.json())
                 })
@@ -1870,7 +1870,7 @@ chanteur.addEventListener("click", function () {
                   coeurplein.style.display = "none";
                   coeurvide.style.display = "initial";
 
-                  fetch("https://music.freefakeapi.io/api/favorites/" + truc[image.id].id, {
+                  fetch("https://music.freefakeapi.io/api/favorites/" + musics.id, {
                     method: "delete",
                     headers: {
                       Authorization: "Bearer " + sessionStorage.token
