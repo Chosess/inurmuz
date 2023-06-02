@@ -2030,11 +2030,8 @@ perso.addEventListener("click", function () {
   lecteur.style.display = "none";
   document.querySelector("body").style.overflow = "initial";
   unartiste.style.display = "none";
-  if (document.querySelector(".la_musique_trop_genial").src == "" || document.querySelector(".la_musique_trop_genial").src == "http://127.0.0.1:5500/index.html") {
-    lecteurmini.style.display = "none";
-  } else {
-    lecteurmini.style.display = "block";
-  }
+  lecteurmini.style.display = "none";
+  document.querySelector(".form").style.display = "block";
 })
 
 
